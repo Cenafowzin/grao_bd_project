@@ -1,4 +1,4 @@
-package com.store.grao;
+package com.emporio.grao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
