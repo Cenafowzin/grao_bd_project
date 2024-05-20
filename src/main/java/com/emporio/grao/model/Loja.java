@@ -1,5 +1,8 @@
 package com.emporio.grao.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Loja {
     private int id_loja;
     private String rua;

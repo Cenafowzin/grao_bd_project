@@ -10,18 +10,18 @@ import org.springframework.context.ApplicationContext;
 public class GraoApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext context =SpringApplication.run(GraoApplication.class, args);
+		ApplicationContext context = SpringApplication.run(GraoApplication.class, args);
 
 		Loja loja1 = context.getBean(Loja.class);
-		loja1.setId_loja(1);
-		loja1.setCidade("olinda");
-		loja1.setBairro("jagunço");
+		loja1.setId_loja(4);
+		loja1.setCidade("pit");
+		loja1.setBairro("chacha");
 		loja1.setNumero(1234);
-		loja1.setRua("rua quarenta e oito");
-		loja1.setTelefone("81999999999");
+		loja1.setRua("rua 333");
+		loja1.setTelefone("81999779999");
 
 		LojaRep rep = context.getBean(LojaRep.class);
-		rep.save(loja1);
+		rep.update(loja1);
 
 		System.out.println(rep.findAll());
 	}
