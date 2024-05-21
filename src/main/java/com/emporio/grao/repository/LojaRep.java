@@ -16,54 +16,56 @@ public class LojaRep {
     @Autowired
     private JdbcTemplate template;
 
-    public JdbcTemplate getTemplate() {
-        return template;
-    }
+    private final RowMapper<Loja> lojaMapper = (rs, rowNum) -> {
+        Loja loja = new Loja();
+        loja.setId_loja(rs.getInt(1));
+        loja.setRua(rs.getString(2));
+        loja.setCidade(rs.getString(3));
+        loja.setBairro(rs.getString(4));
+        loja.setNumero(rs.getInt(5));
+        loja.setTelefone(rs.getString(6));
 
-    public void setTemplate(JdbcTemplate template) {
-        this.template = template;
-    }
+        return loja;
+    };
 
-    public void save(Loja loja) {
+    public void insert(Loja loja) {
         final String sql = "insert into loja (rua, cidade, bairro, numero, telefone) values (?,?,?,?,?)";
 
-        template.update(sql, loja.getRua(), loja.getCidade(), loja.getBairro(), loja.getNumero(), loja.getTelefone());
+        template.update(sql,
+                loja.getRua(),
+                loja.getCidade(),
+                loja.getBairro(),
+                loja.getNumero(),
+                loja.getTelefone());
     }
 
     public void update(Loja loja){
         final String sql = "update loja set rua = ?, cidade = ?, bairro = ?, numero = ?, telefone = ? where id_loja = ?";
 
-        template.update(sql, loja.getRua(), loja.getCidade(),loja.getBairro(),loja.getNumero(),loja.getTelefone(),loja.getId_loja());
+        template.update(sql,
+                loja.getRua(),
+                loja.getCidade(),
+                loja.getBairro(),
+                loja.getNumero(),
+                loja.getTelefone(),
+                loja.getId_loja());
     }
 
-    public void delete(Loja loja){
+    public void delete(int id_loja){
         final String sql = "delete from loja where id_loja = ?";
 
-        template.update(sql, loja.getId_loja());
+        template.update(sql, id_loja);
+    }
+
+    public Loja findLoja(int id_loja){
+        final String sql = "select * from loja where id_loja = ?";
+
+        return template.queryForObject(sql, lojaMapper, id_loja);
     }
 
     public List<Loja> findAll(){
-
         final String sql = "select * from loja";
 
-        RowMapper<Loja> mapper = new RowMapper<Loja>() {
-            @Override
-            public Loja mapRow(ResultSet rs, int rowNum) throws SQLException {
-
-                Loja a = new Loja();
-                a.setId_loja(rs.getInt(1));
-                a.setRua(rs.getString(2));
-                a.setCidade(rs.getString(3));
-                a.setBairro(rs.getString(4));
-                a.setNumero(rs.getInt(5));
-                a.setTelefone(rs.getString(6));
-
-                return a;
-            }
-        };
-
-        List<Loja> lojas = template.query(sql, mapper);
-
-        return lojas;
+         return template.query(sql, lojaMapper);
     }
 }
