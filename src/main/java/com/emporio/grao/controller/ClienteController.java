@@ -37,7 +37,7 @@ public class ClienteController {
 
     @PutMapping("/cliente/{id_cliente}")
     public String editCliente(@PathVariable int id_cliente, @RequestBody Cliente newCliente){
-        clienteRep.update(newCliente);
+        clienteRep.update(id_cliente, newCliente);
         return "Cliente " + id_cliente + " editado";
     }
 }

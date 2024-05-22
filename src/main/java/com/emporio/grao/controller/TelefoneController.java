@@ -37,7 +37,7 @@ public class TelefoneController {
 
     @PutMapping("/telefone/{id_telefone}")
     public String editTelefone(@PathVariable int id_telefone, @RequestBody Telefone newTelefone){
-        telefoneRep.update(newTelefone);
+        telefoneRep.update(id_telefone, newTelefone);
         return "telefone editado";
     }
 }

@@ -37,7 +37,7 @@ public class FuncionarioController {
 
     @PutMapping("/funcionario/{id_funcionario}")
     public String editFuncionario(@PathVariable int id_funcionario, @RequestBody Funcionario newFuncionario){
-        funcRep.update(newFuncionario);
+        funcRep.update(id_funcionario, newFuncionario);
         return "Funcionario" + id_funcionario + " editado";
     }
 }

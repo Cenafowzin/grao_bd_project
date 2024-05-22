@@ -46,7 +46,7 @@ public class FuncionarioRep {
                 funcionario.getCargo());
     }
 
-    public void update(Funcionario funcionario){
+    public void update(int id_funcionario, Funcionario funcionario){
         final String sql = "update funcionario " +
                 "set id_gerente = ?,cpf = ?,nome = ?,email = ?,rua = ?,cidade = ?,bairro = ?,numero = ?,salario = ?,cargo = ? " +
                 "where id_funcionario = ?";
@@ -62,7 +62,7 @@ public class FuncionarioRep {
                 funcionario.getNumero(),
                 funcionario.getSalario(),
                 funcionario.getCargo(),
-                funcionario.getId_funcionario());
+                id_funcionario);
     }
 
     public void delete(int id_funcionario){

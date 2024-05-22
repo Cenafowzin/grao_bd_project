@@ -31,13 +31,13 @@ public class TelefoneRep {
                 telefone.getNumero());
     }
 
-    public void update(Telefone telefone){
+    public void update(int id_telefone, Telefone telefone){
         final String sql = "update telefone set id_funcionario = ?, numero = ? where id_telefone = ?";
 
         template.update(sql,
                 telefone.getId_funcionario(),
                 telefone.getNumero(),
-                telefone.getId_telefone());
+                id_telefone);
     }
 
     public void delete(int id_telefone){

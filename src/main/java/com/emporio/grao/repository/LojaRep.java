@@ -39,7 +39,7 @@ public class LojaRep {
                 loja.getTelefone());
     }
 
-    public void update(Loja loja){
+    public void update(int id_loja, Loja loja){
         final String sql = "update loja set rua = ?, cidade = ?, bairro = ?, numero = ?, telefone = ? where id_loja = ?";
 
         template.update(sql,
@@ -48,7 +48,7 @@ public class LojaRep {
                 loja.getBairro(),
                 loja.getNumero(),
                 loja.getTelefone(),
-                loja.getId_loja());
+                id_loja);
     }
 
     public void delete(int id_loja){

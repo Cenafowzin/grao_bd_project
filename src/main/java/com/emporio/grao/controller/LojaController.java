@@ -37,7 +37,7 @@ public class LojaController {
 
     @PutMapping("/loja/{id_loja}")
     public String editLoja(@PathVariable int id_loja, @RequestBody Loja newLoja){
-        lojaRepository.update(newLoja);
+        lojaRepository.update(id_loja, newLoja);
         return "Loja " + id_loja + " editada";
     }
 }

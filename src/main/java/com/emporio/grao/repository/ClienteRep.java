@@ -37,7 +37,7 @@ public class ClienteRep {
                 cliente.isFidelizado());
     }
 
-    public void update(Cliente cliente){
+    public void update(int id_cliente, Cliente cliente){
         final String sql = "update cliente " +
                 "set cpf = ?, nome = ?, telefone = ?, pontos_fidelidade = ?, fidelizado = ? " +
                 "where id_cliente = ?";
@@ -48,7 +48,7 @@ public class ClienteRep {
                 cliente.getTelefone(),
                 cliente.getPontos_fidelidade(),
                 cliente.isFidelizado(),
-                cliente.getId_cliente());
+                id_cliente);
     }
 
     public void delete(int id_cliente){
