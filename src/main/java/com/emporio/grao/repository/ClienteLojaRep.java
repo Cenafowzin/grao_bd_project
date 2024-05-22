@@ -20,9 +20,9 @@ public class ClienteLojaRep {
         clienteLoja.setId_loja(rs.getInt(2));
         return clienteLoja;
     };
-    public void insert (ClienteLoja clienteloja) {
+    public void insert (ClienteLoja clienteLoja) {
         final String sql = "insert into cliente_loja (id_cliente, id_loja) values (? , ?)";
-        template.update(sql, clienteloja.getId_cliente(), clienteloja.getId_loja());
+        template.update(sql, clienteLoja.getId_cliente(), clienteLoja.getId_loja());
     }
 
     public void update (int id_cliente, int id_loja, ClienteLoja clienteLoja) {

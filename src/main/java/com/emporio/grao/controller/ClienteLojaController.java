@@ -14,11 +14,11 @@ public class ClienteLojaController {
     private ClienteLojaRep clienteLojaRep;
 
     @GetMapping("/cliente_lojas")//busca
-    public List<ClienteLoja> getAllClienteLojas() {
+    public List<ClienteLoja> getAllClienteLoja() {
         return clienteLojaRep.findAll();
     }
 
-    @GetMapping("/cliente_Lojas/{id_cliente}/{id_loja}")
+    @GetMapping("/cliente_lojas/{id_cliente}/{id_loja}")
     public ClienteLoja getClienteLoja(@PathVariable int id_cliente, @PathVariable int id_loja) {
         return clienteLojaRep.findClienteLoja(id_cliente, id_loja);
     }
