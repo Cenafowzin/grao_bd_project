@@ -13,7 +13,7 @@ public class ProdutoLojaController {
     @Autowired
     private ProdutoLojaRep produtoLojaRep;
 
-    @GetMapping("/produto_loja")//busca
+    @GetMapping("/produto_lojas")//busca
     public List<ProdutoLoja> getAllProdutoLoja(){
         return produtoLojaRep.findAll();
     }
@@ -28,13 +28,13 @@ public class ProdutoLojaController {
         produtoLojaRep.insert(newProdutoLoja);
         return "Produto da loja criado";
     }
-    @DeleteMapping ("/produto_lojas/{id_loja}/{codigo_produto}")
+    @DeleteMapping ("/produto_loja/{id_loja}/{codigo_produto}")
     public String deleteProdutoLoja(@PathVariable int id_loja, @PathVariable String codigo_produto){
         produtoLojaRep.delete(id_loja, codigo_produto);
         return "Produto " + codigo_produto + " apagado da loja " + id_loja;
     }
 
-    @PutMapping("/produto_lojas/{id_loja}/{codigo_produto}")
+    @PutMapping("/produto_loja/{id_loja}/{codigo_produto}")
     public String editProdutoLoja(@PathVariable int id_loja, @PathVariable String codigo_produto, @RequestBody ProdutoLoja newProdutoLoja){
         produtoLojaRep.update(id_loja, codigo_produto, newProdutoLoja);
         return "Produto atualizado: " + id_loja + codigo_produto;

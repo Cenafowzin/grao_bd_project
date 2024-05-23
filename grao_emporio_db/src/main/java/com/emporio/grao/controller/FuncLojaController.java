@@ -16,7 +16,7 @@ public class FuncLojaController {
     @GetMapping("/funcionario_lojas") //pegar, buscar
     public List<FuncionarioLoja> getAllFuncionarioLojas() {return funcionarioLojaRep.findAll();}
 
-    @GetMapping("/funcionario_lojas/{id_funcionario}/{id_loja}")
+    @GetMapping("/funcionario_loja/{id_funcionario}/{id_loja}")
     public FuncionarioLoja getFuncionarioLoja(@PathVariable int id_funcionario, @PathVariable int id_loja){
         return funcionarioLojaRep.findFuncionarioLoja(id_funcionario, id_loja);
     }
@@ -27,13 +27,13 @@ public class FuncLojaController {
         return "Funcionario da loja criado";
     }
 
-    @DeleteMapping("funcionario_lojas/{id_funcionario}/{id_loja}")
+    @DeleteMapping("funcionario_loja/{id_funcionario}/{id_loja}")
     public String deleteFuncionarioLoja(@PathVariable int id_funcionario, @PathVariable int id_loja){
         funcionarioLojaRep.delete(id_funcionario, id_loja);
         return "Funcionário " + id_funcionario + ", vinculado a loja " + id_loja + " deletado";
     }
 
-    @PutMapping("/funcionario_lojas/{id_funcionario}/{id_loja}") //editar
+    @PutMapping("/funcionario_loja/{id_funcionario}/{id_loja}") //editar
     public String editFuncionarioLoja(@PathVariable int id_funcionario, @PathVariable int id_loja, @RequestBody FuncionarioLoja newFuncionarioLoja){
         funcionarioLojaRep.update(id_funcionario, id_loja, newFuncionarioLoja);
         return "Funcionário " + id_funcionario + " da loja " + id_loja + " editado";

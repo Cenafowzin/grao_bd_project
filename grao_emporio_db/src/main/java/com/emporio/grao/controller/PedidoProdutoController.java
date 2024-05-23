@@ -28,13 +28,13 @@ public class PedidoProdutoController {
         pedidoProdutoRep.insert(newPedidoProduto);
         return "Pedido do produto criado";
     }
-    @DeleteMapping ("/pedido_produtos/{codigo_produto}/{id_pedido}")
+    @DeleteMapping ("/pedido_produto/{codigo_produto}/{id_pedido}")
     public String deletePedidoProduto(@PathVariable String codigo_produto, @PathVariable int id_pedido){
         pedidoProdutoRep.delete(codigo_produto, id_pedido);
         return "Pedido " + id_pedido + "apagado.";
     }
 
-    @PutMapping("/pedido_produtos/{codigo_produto}/{id_pedido}")
+    @PutMapping("/pedido_produto/{codigo_produto}/{id_pedido}")
     public String editPedidoProduto(@PathVariable String codigo_produto, @PathVariable int id_pedido, @RequestBody PedidoProduto newPedidoProduto){
         pedidoProdutoRep.update(codigo_produto, id_pedido, newPedidoProduto);
         return "Pedido atualizado. Pedido n. " + id_pedido;
