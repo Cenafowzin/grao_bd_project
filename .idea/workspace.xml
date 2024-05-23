@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1ea5fc5a-a43f-4d19-8c7e-e8c4c6f28949" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/GraoApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteLojaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncLojaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncionarioController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/LojaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/PedidoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/PedidoProdutoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoLojaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/TelefoneController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/VendaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/Cargo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/Cliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/ClienteLoja.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/Funcionario.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/FuncionarioLoja.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/Loja.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/Pedido.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/PedidoProduto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/Produto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/ProdutoLoja.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/Telefone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/Venda.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/ClienteLojaRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/ClienteRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/FuncionarioLojaRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/FuncionarioRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/LojaRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/PedidoProdutoRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/PedidoRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/ProdutoLojaRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/ProdutoRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/TelefoneRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/VendaRep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/emporio/grao/GraoApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2gX2HYchKU9POihBawHcXzbnmT4" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GraoApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/digod/Desktop/Códigos/java/projeto_bd_grao/grao_bd_project/grao_emporio_db"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\digod\Desktop\Códigos\java\projeto_bd_grao\grao_bd_project\grao_project_back" />
+      <recent name="C:\Users\digod\Desktop\Códigos\java\projeto_bd_grao\grao_bd_project\src\main\java" />
+      <recent name="C:\Users\digod\Desktop\Códigos\java\projeto_bd_grao\grao_bd_project\src" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1ea5fc5a-a43f-4d19-8c7e-e8c4c6f28949" name="Changes" comment="" />
+      <created>1715829515939</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715829515939</updated>
+    </task>
+    <servers />
+  </component>
+</project>

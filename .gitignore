@@ -1,6 +1,6 @@
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
+!grao_project_back/.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 application.properties
@@ -15,7 +15,7 @@ application.properties
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+grao_project_back/.idea
 *.iws
 *.iml
 *.ipr
