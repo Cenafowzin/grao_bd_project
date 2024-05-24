@@ -27,7 +27,7 @@ function App() {
         <Route exact path = "/criarProduto" element = {<AddProduto/> } />
         <Route exact path = "/funcionarios" element = {<Funcionarios/> } />
         <Route exact path = "/detalhesFuncionario" element = {<VerFuncionario/> } />
-        <Route exact path = "/editarFuncionario/:id" element = {<EditFuncionario/> } />
+        <Route exact path = "/editarFuncionario/:id_funcionario" element = {<EditFuncionario/> } />
         <Route exact path = "/criarFuncionario" element = {<AddFuncionario/> } />
       </Routes>
       </Router>
