@@ -8,6 +8,7 @@ import Loja from './pages/Lojas';
 import Home from './pages/Home';
 import VerFuncionario from './Funcionario/VerFuncionario';
 import AddFuncionario from './Funcionario/AddFuncionario';
+import EditFuncionario from './Funcionario/EditFuncionario';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path = "/gerente" element = {<Gerente />} />
         <Route exact path = "/funcionarios" element = {<Funcionarios/> } />
         <Route exact path = "/detalhesFuncionario" element = {<VerFuncionario/> } />
+        <Route exact path = "/editarFuncionario/:id" element = {<EditFuncionario/> } />
         <Route exact path = "/criarFuncionario" element = {<AddFuncionario/> } />
       </Routes>
       </Router>

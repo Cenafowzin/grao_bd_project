@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ea5fc5a-a43f-4d19-8c7e-e8c4c6f28949" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/Funcionario/AddFuncionario.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/Funcionario/AddFuncionario.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/pages/Funcionarios.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/pages/Funcionarios.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/Funcionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/model/Funcionario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

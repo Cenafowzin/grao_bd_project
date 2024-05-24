@@ -84,7 +84,7 @@ public class Funcionario {
         return numero;
     }
 
-    public void setNumero(int numnero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 

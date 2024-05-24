@@ -1,10 +1,12 @@
 import axios from "axios";
-import React, { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 
-export default function AddFuncionario() {
+export default function EditFuncionario() {
 
     let navigate = useNavigate();
+
+    const {id} = useParams();
 
   const [func, setFunc] = useState({
     id_gerente:"",
@@ -40,17 +42,24 @@ export default function AddFuncionario() {
     });
   };
 
+  useEffect()
+
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/funcionario", func);
+    await axios.put(`http://localhost:8080/funcionario/${id}`, func);
     navigate("/funcionarios");
   };
+
+  const loadFunc = async ()=> {
+    const result = await axios.get(`http://localhost:8080/funcionario/${id}`);
+    setFunc(result.data);
+  }
 
   return (
     <div className="container">
       <div className="row">
         <div className="col-mc-6 offset-md3 border rounded p-4 mt-2 shadow">
-          <h2 className="text-center m-4">Adicionar Funcionário</h2>
+          <h2 className="text-center m-4">Editar Funcionário</h2>
           <form onSubmit={onSubmit}>
           <div className="mb-3">
             <label htmlFor="Cpf" className="form-label">

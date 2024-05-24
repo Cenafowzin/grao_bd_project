@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Funcionarios() {
   const [funcs, setFuncs] = useState([]);
+
+  const{id}= useParams()
 
   useEffect(() => {
     loadFuncs();
@@ -12,8 +14,11 @@ export default function Funcionarios() {
   const loadFuncs = async () => {
     const result = await axios.get("http://localhost:8080/funcionarios");
     setFuncs(result.data);
-    console.log(result.data);
   };
+
+  const deleteFunc = async (id) => {
+    await axios.delete(`http://localhost:8080/funcionario/${id}`)
+  }
 
   return (
     <div className="container">
@@ -39,7 +44,7 @@ export default function Funcionarios() {
                     <td>{func.email}</td>
                     <td>
                         <Link className="btn btn-primary mx-2" to="/detalhesFuncionario">Ver</Link>
-                        <button className="btn btn-secondary mx-2">Editar</button>
+                        <Link className="btn btn-secondary mx-2" to={`/editarFuncionario/${func.id}`}>Editar</Link>
                         <button className="btn btn-danger mx-2">Deletar</button>
                     </td>
                     </tr>
