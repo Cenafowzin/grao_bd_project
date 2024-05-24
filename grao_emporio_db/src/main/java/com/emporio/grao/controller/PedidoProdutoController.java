@@ -13,7 +13,7 @@ public class PedidoProdutoController {
     @Autowired
     private PedidoProdutoRep pedidoProdutoRep;
 
-    @GetMapping("/pedido_produto")//busca
+    @GetMapping("/pedido_produtos")//busca
     public List<PedidoProduto> getAllPedidoProduto(){
         return pedidoProdutoRep.findAll();
     }
