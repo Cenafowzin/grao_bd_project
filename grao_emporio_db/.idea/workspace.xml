@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ea5fc5a-a43f-4d19-8c7e-e8c4c6f28949" name="Changes" comment="" />
+    <list default="true" id="1ea5fc5a-a43f-4d19-8c7e-e8c4c6f28949" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteLojaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteLojaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncLojaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncLojaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncionarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/LojaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/LojaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/PedidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/PedidoProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/PedidoProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoLojaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoLojaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/TelefoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/TelefoneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/VendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/VendaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,13 +59,46 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/digod/Desktop/Códigos/java/projeto_bd_grao/grao_bd_project/grao_emporio_db"
+    "last_opened_file_path": "C:/Users/Diego/Desktop/CESAR/BD/grao_bd_project/grao_emporio_db"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\digod\Desktop\Códigos\java\projeto_bd_grao\grao_bd_project\src" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="GraoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.emporio.grao.GraoApplication" />
+      <module name="grao" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.emporio.grao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="grao_emporio_db" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="grao_emporio_db" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GraoApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
