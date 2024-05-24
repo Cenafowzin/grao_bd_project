@@ -25,7 +25,7 @@ export default function Home() {
                             <th scope="col">Rua</th>
                             <th scope="col">Cidade</th>
                             <th scope="col">Numero</th>
-                            <th scope="col">Bairro</th>
+                            <th scope="col">Opçoes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -36,7 +36,12 @@ export default function Home() {
                             <td>{user.rua}</td>
                             <td>{user.cidade}</td>
                             <td>{user.numero}</td>
-                            <td>{user.bairro}</td>
+                            <td>
+                                <button className="btn btn-primary mx-2">Ver</button>
+                                <button className="btn btn-outline-primary mx-2">Editar</button>
+                                <button className="btn btn-danger mx-2">Deletar</button>
+                            </td>
+                            
                         </tr>
 
                             ))

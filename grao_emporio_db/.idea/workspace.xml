@@ -5,19 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ea5fc5a-a43f-4d19-8c7e-e8c4c6f28949" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../grao-front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/users/AddUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/users/EditUser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/users/ViewUser.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteLojaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteLojaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncLojaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncLojaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncionarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/LojaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/LojaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/PedidoProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/PedidoProdutoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoLojaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoLojaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/TelefoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/TelefoneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/VendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/VendaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
