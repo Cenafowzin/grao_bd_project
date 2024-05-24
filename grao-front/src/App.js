@@ -12,6 +12,7 @@ import VerFuncionario from './Funcionario/VerFuncionario';
 import AddFuncionario from './Funcionario/AddFuncionario';
 import Produtos from './pages/Produtos';
 import AddProduto from './Produto/AddProduto';
+import EditProduto from './Produto/EditProduto';
 import EditFuncionario from './Funcionario/EditFuncionario';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route exact path = "/gerente" element = {<Gerente />} />
         <Route exact path = "/produtos" element = {<Produtos />} />
         <Route exact path = "/criarProduto" element = {<AddProduto/> } />
+        <Route exact path = "/editarProduto/:codigo_barras" element={<EditProduto />} />
         <Route exact path = "/funcionarios" element = {<Funcionarios/> } />
         <Route exact path = "/detalhesFuncionario" element = {<VerFuncionario/> } />
         <Route exact path = "/editarFuncionario/:id_funcionario" element = {<EditFuncionario/> } />

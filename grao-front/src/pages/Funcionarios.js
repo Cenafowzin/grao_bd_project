@@ -17,8 +17,10 @@ export default function Funcionarios() {
   };
 
   const deleteFunc = async (id_funcionario) => {
-    await axios.delete(`http://localhost:8080/funcionario/${id_funcionario}`);
-    loadFuncs();
+    if (window.confirm("Tem certeza que deseja deletar este funcionário?")) {
+      await axios.delete(`http://localhost:8080/funcionario/${id_funcionario}`);
+      loadFuncs();
+    }
   };
 
   return (

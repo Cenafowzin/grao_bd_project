@@ -13,14 +13,20 @@ export default function Produtos() {
   const loadProdutos = async () => {
     const result = await axios.get("http://localhost:8080/produtos");
     setProdutos(result.data);
-    console.log(result.data);
   };
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
 
-  const filteredProdutos = produtos.filter(produto =>
+  const deleteProduto = async (codigo_barras) => {
+    if (window.confirm("Tem certeza que deseja deletar este produto?")) {
+      await axios.delete(`http://localhost:8080/produto/${codigo_barras}`);
+      loadProdutos();
+    }
+  };
+
+  const filteredProdutos = produtos.filter((produto) =>
     produto.codigo_barras.includes(search)
   );
 
@@ -28,7 +34,9 @@ export default function Produtos() {
     <div className="container">
       <div className="py-4">
         <div className="d-flex justify-content-between align-items-center mb-3">
-          <Link className="btn btn-primary mx-2" to="/criarProduto">Novo Produto</Link>
+          <Link className="btn btn-primary mx-2" to="/criarProduto">
+            Novo Produto
+          </Link>
           <input
             type="text"
             className="form-control w-25"
@@ -47,20 +55,33 @@ export default function Produtos() {
             </tr>
           </thead>
           <tbody>
-            {
-              filteredProdutos.map((produto, index) => (
-                <tr key={produto.codigo_barras}>
-                  <th scope="row">{produto.codigo_barras}</th>
-                  <td>{produto.descricao}</td>
-                  <td>{produto.valor_unitario}</td>
-                  <td>
-                    <Link className="btn btn-primary mx-2" to={`/detalhesProduto/${produto.codigo_barras}`}>Ver</Link>
-                    <button className="btn btn-secondary mx-2">Editar</button>
-                    <button className="btn btn-danger mx-2">Deletar</button>
-                  </td>
-                </tr>
-              ))
-            }
+            {filteredProdutos.map((produto, index) => (
+              <tr key={produto.codigo_barras}>
+                <th scope="row">{produto.codigo_barras}</th>
+                <td>{produto.descricao}</td>
+                <td>{produto.valor_unitario}</td>
+                <td>
+                  <Link
+                    className="btn btn-primary mx-2"
+                    to={`/detalhesProduto/${produto.codigo_barras}`}
+                  >
+                    Ver
+                  </Link>
+                  <Link
+                    className="btn btn-secondary mx-2"
+                    to={`/editarProduto/${produto.codigo_barras}`}
+                  >
+                    Editar
+                  </Link>
+                  <button
+                    className="btn btn-danger mx-2"
+                    onClick={() => deleteProduto(produto.codigo_barras)}
+                  >
+                    Deletar
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
