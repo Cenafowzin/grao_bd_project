@@ -1,16 +1,18 @@
 import axios from "axios";
-import React, { useState } from "react";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { LojaContext } from "../Loja/LojaContext";
 
 export default function AddFuncionario() {
-
     let navigate = useNavigate();
+    const { selectedLojaId } = useContext(LojaContext);
 
   const [func, setFunc] = useState({
     id_gerente:"",
     cpf: "",
     nome: "",
     email: "",
+    senha:"",
     rua: "",
     cidade: "",
     bairro: "",
@@ -19,11 +21,17 @@ export default function AddFuncionario() {
     cargo: ""
   });
 
+  const [func_loja] =useState({
+    id_funcionario: "",
+    id_loja: selectedLojaId
+  });
+
   const {
     id_gerente,
     cpf,
     nome,
     email,
+    senha,
     rua,
     cidade,
     bairro,
@@ -43,6 +51,9 @@ export default function AddFuncionario() {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios.post("http://localhost:8080/funcionario", func);
+    const result = await axios.get(`http://localhost:8080/funcionarioCpf/${func.cpf}`);
+    func_loja.id_funcionario = result.data.id_funcionario;
+    await axios.post("http://localhost:8080/funcionario_loja", func_loja);
     navigate("/funcionarios");
   };
 
@@ -88,6 +99,19 @@ export default function AddFuncionario() {
               placeholder="Digite o e-mail"
               name="email"
               value={email}
+              onChange={onInputChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="Senha" className="form-label">
+              Senha
+            </label>
+            <input
+              type={"text"}
+              className="form-control"
+              placeholder="Digite a senha"
+              name="senha"
+              value={senha}
               onChange={onInputChange}
             />
           </div>

@@ -5,7 +5,7 @@ import { LojaContext } from "../Loja/LojaContext";
 
 export default function AddCliente() {
   let navigate = useNavigate();
-  const { selectedLojaId, selectedLojaBairro } = useContext(LojaContext);
+  const { selectedLojaId } = useContext(LojaContext);
 
   const [cliente, setCliente] = useState({
     cpf: "",
@@ -15,7 +15,7 @@ export default function AddCliente() {
     fidelizado: false,
   });
 
-  const [cliente_loja, setClienteLoja] = useState({
+  const [cliente_loja] = useState({
     id_cliente: "",
     id_loja: selectedLojaId
   });
@@ -42,7 +42,8 @@ export default function AddCliente() {
     } else {
       await axios.post("http://localhost:8080/cliente", cliente);
       const result = await axios.get(`http://localhost:8080/clienteCpf/${cliente.cpf}`);
-      await axios.post("")
+      cliente_loja.id_cliente = result.data.id_cliente;
+      await axios.post("http://localhost:8080/cliente_loja", cliente_loja)
       navigate("/clientes");
     }
   };
