@@ -41,9 +41,11 @@ export default function AddCliente() {
       }
     } else {
       await axios.post("http://localhost:8080/cliente", cliente);
-      const result = await axios.get(`http://localhost:8080/clienteCpf/${cliente.cpf}`);
-      cliente_loja.id_cliente = result.data.id_cliente;
-      await axios.post("http://localhost:8080/cliente_loja", cliente_loja)
+      if (selectedLojaId != 0) {
+        const result = await axios.get(`http://localhost:8080/clienteCpf/${cliente.cpf}`);
+        cliente_loja.id_cliente = result.data.id_cliente;
+        await axios.post("http://localhost:8080/cliente_loja", cliente_loja)
+      }
       navigate("/clientes");
     }
   };

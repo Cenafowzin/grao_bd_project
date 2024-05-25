@@ -51,9 +51,11 @@ export default function AddFuncionario() {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios.post("http://localhost:8080/funcionario", func);
-    const result = await axios.get(`http://localhost:8080/funcionarioCpf/${func.cpf}`);
-    func_loja.id_funcionario = result.data.id_funcionario;
-    await axios.post("http://localhost:8080/funcionario_loja", func_loja);
+    if (selectedLojaId != 0) {
+      const result = await axios.get(`http://localhost:8080/funcionarioCpf/${func.cpf}`);
+      func_loja.id_funcionario = result.data.id_funcionario;
+      await axios.post("http://localhost:8080/funcionario_loja", func_loja);
+    }
     navigate("/funcionarios");
   };
 

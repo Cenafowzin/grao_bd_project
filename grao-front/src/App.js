@@ -32,7 +32,7 @@ function App() {
         <Router>
         <Navbar />
         <Routes>
-        <Route exact path = "/" element = {<Lojas/>} />
+          <Route exact path = "/" element = {<Lojas/>} /> 
           <Route exact path = "/lojas" element = {<Lojas/>} />
           <Route exact path = "/criarLoja" element = {<AddLoja/>} />
           <Route exact path = "/editarLoja/:id_loja" element = {<EditLoja/>} />

@@ -1,14 +1,21 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { LojaContext } from "../Loja/LojaContext";
 
 export default function AddProduto() {
   let navigate = useNavigate();
+  const { selectedLojaId } = useContext(LojaContext);
 
   const [produto, setProduto] = useState({
     codigo_barras: "",
     descricao: "",
     valor_unitario: "",
+  });
+
+  const [produto_loja] = useState({
+    id_loja: selectedLojaId,
+    codigo_produto:""
   });
 
   const { codigo_barras, descricao, valor_unitario } = produto;
@@ -30,6 +37,11 @@ export default function AddProduto() {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios.post("http://localhost:8080/produto", produto);
+    if (selectedLojaId != 0) {
+      const result = await axios.get(`http://localhost:8080/produto/${produto.codigo_barras}`);
+      produto_loja.codigo_produto = result.data.codigo_barras;
+      await axios.post("http://localhost:8080/produto_loja", produto_loja);
+    }
     navigate("/produtos");
   };
 
