@@ -22,6 +22,13 @@ export default function EditCliente() {
       ...cliente,
       [name]: type === "checkbox" ? checked : value,
     });
+
+    if ((name === "cpf" && value.length <= 11) || (name === "telefone" && value.length <= 11) || (name !== "cpf" && name !== "telefone")) {
+      setCliente({
+        ...cliente,
+        [name]: value,
+      });
+    }
   };
 
   useEffect(() => {
@@ -67,6 +74,8 @@ export default function EditCliente() {
                 name="cpf"
                 value={cpf}
                 onChange={onInputChange}
+                required
+                pattern="\d{11}"
               />
             </div>
             <div className="mb-3">
@@ -80,6 +89,7 @@ export default function EditCliente() {
                 name="nome"
                 value={nome}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -93,6 +103,8 @@ export default function EditCliente() {
                 name="telefone"
                 value={telefone}
                 onChange={onInputChange}
+                required
+                pattern="\d{10,11}"
               />
             </div>
             <div className="mb-3">
@@ -106,6 +118,7 @@ export default function EditCliente() {
                 name="pontos_fidelidade"
                 value={pontos_fidelidade}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -120,12 +133,13 @@ export default function EditCliente() {
                 onChange={onInputChange}
               />
             </div>
-            <Link className="btn btn-danger mx-2" to="/clientes">
-              Cancelar
-            </Link>
             <button type="submit" className="btn btn-primary">
               Salvar
             </button>
+            <Link className="btn btn-danger mx-2" to="/clientes">
+              Cancelar
+            </Link>
+            
           </form>
         </div>
       </div>

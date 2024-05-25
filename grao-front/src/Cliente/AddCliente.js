@@ -17,7 +17,7 @@ export default function AddCliente() {
 
   const [cliente_loja] = useState({
     id_cliente: "",
-    id_loja: selectedLojaId
+    id_loja: selectedLojaId,
   });
 
   const { cpf, nome, telefone, pontos_fidelidade, fidelizado } = cliente;
@@ -29,26 +29,28 @@ export default function AddCliente() {
       [name]: name === "pontos_fidelidade" ? parseInt(value, 10) : value,
     });
 
+    if ((name === "cpf" && value.length <= 11) || (name === "telefone" && value.length <= 11) || (name !== "cpf" && name !== "telefone")) {
+      setCliente({
+        ...cliente,
+        [name]: value,
+      });
+    }
+
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (!fidelizado) {
-      const confirm = window.confirm("O cliente não será salvo, pois não está fidelizado. Deseja continuar?");
-      if (confirm) {
-        navigate("/clientes");
-        return;
-      }
-    } else {
-      await axios.post("http://localhost:8080/cliente", cliente);
-      if (selectedLojaId != 0) {
-        const result = await axios.get(`http://localhost:8080/clienteCpf/${cliente.cpf}`);
-        cliente_loja.id_cliente = result.data.id_cliente;
-        await axios.post("http://localhost:8080/cliente_loja", cliente_loja)
-      }
+    try {
+      const response = await axios.post("http://localhost:8080/cliente", cliente);
+      // Suponha que você vincule o cliente à loja aqui
       navigate("/clientes");
+    } catch (error) {
+      console.error('Erro ao criar o cliente:', error.response ? error.response.data : error.message);
+      // Aproveite para exibir um feedback ao usuário aqui, se apropriado
     }
   };
+  
+
 
   return (
     <div className="container">
@@ -67,6 +69,8 @@ export default function AddCliente() {
                 name="cpf"
                 value={cpf}
                 onChange={onInputChange}
+                required
+                pattern="\d{11}"
               />
             </div>
             <div className="mb-3">
@@ -80,6 +84,7 @@ export default function AddCliente() {
                 name="nome"
                 value={nome}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -93,6 +98,8 @@ export default function AddCliente() {
                 name="telefone"
                 value={telefone}
                 onChange={onInputChange}
+                required
+                pattern="\d{10,11}"
               />
             </div>
             <div className="mb-3">
@@ -106,6 +113,7 @@ export default function AddCliente() {
                 name="pontos_fidelidade"
                 value={pontos_fidelidade}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -122,12 +130,12 @@ export default function AddCliente() {
                 <option value={true}>Sim</option>
               </select>
             </div>
+            <button type="submit" className="btn btn-primary">
+              Confirmar
+            </button>
             <Link className="btn btn-danger mx-2" to="/clientes">
               Cancelar
             </Link>
-            <button type="submit" className="btn btn-primary">
-              Enviar
-            </button>
           </form>
         </div>
       </div>
