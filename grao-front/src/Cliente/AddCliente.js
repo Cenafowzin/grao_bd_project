@@ -41,16 +41,18 @@ export default function AddCliente() {
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/cliente", cliente);
-      // Suponha que você vincule o cliente à loja aqui
+      await axios.post("http://localhost:8080/cliente", cliente);
+      if (selectedLojaId != 0) {
+        const result = await axios.get(`http://localhost:8080/clienteCpf/${cliente.cpf}`);
+        cliente_loja.id_cliente = result.data.id_cliente;
+        await axios.post("http://localhost:8080/cliente_loja", cliente_loja)
+      }
       navigate("/clientes");
     } catch (error) {
       console.error('Erro ao criar o cliente:', error.response ? error.response.data : error.message);
       // Aproveite para exibir um feedback ao usuário aqui, se apropriado
     }
   };
-  
-
 
   return (
     <div className="container">

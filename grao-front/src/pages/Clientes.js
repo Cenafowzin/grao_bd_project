@@ -12,7 +12,6 @@ export default function Clientes() {
 
   const loadClientes = async () => {
     const result = await axios.get("http://localhost:8080/clientes");
-    // Filtrar apenas os clientes fidelizados
     const clientesFidelizados = result.data.filter(
       (cliente) => cliente.fidelizado
     );
