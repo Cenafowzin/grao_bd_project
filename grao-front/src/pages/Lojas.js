@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { LojaContext } from "../Loja/LojaContext";
 
-export default function Loja() {
+export default function Lojas() {
   const [lojas, setLojas] = useState([]);
+  const { saveLojaId } = useContext(LojaContext);
 
   useEffect(() => {
     loadLojas();
@@ -24,34 +26,40 @@ export default function Loja() {
   return (
     <div className="container">
       <div className="py-4">
-        <Link className="btn btn-primary mx-2" to="/criarLoja">
+        <Link className="btn btn-primary mx-2 mb-4" to="/criarLoja">
           Nova Loja
         </Link>
-        <table className="table border shadow">
-          <thead>
-            <tr>
-              <th scope="col">Id Loja</th>
-              <th scope="col">Rua</th>
-              <th scope="col">Cidade</th>
-              <th scope="col">Numero</th>
-              <th scope="col">Opçoes</th>
-            </tr>
-          </thead>
-          <tbody>
-            {lojas.map((loja, index) => (
-              <tr>
-                <th scope="row" key={index}>
-                  {index + 1}
-                </th>
-                <td>{loja.rua}</td>
-                <td>{loja.cidade}</td>
-                <td>{loja.numero}</td>
-                <td>
-                  <button className="btn btn-primary mx-2">Ver</button>
-                  <Link
-                    className="btn btn-secondary mx-2"
-                    to={`/editarLoja/${loja.id_loja}`}
+        <div className="row">
+          {lojas.map((loja, index) => (
+            <div className="col-md-4 mb-4" key={index}>
+              <div className="card h-100">
+                <div className="card-body">
+                  <h5 className="card-title">Loja {index + 1}</h5>
+                  <p className="card-text">
+                    <strong>Rua:</strong> {loja.rua}
+                  </p>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <p className="card-text">
+                        <strong>Número:</strong> {loja.numero}
+                      </p>
+                    </div>
+                    <div className="col-md-6">
+                      <p className="card-text">
+                        <strong>Cidade:</strong> {loja.cidade}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="card-footer">
+                <button
+                    className="btn btn-primary mx-2"
+                    onClick={() => saveLojaId(loja.id_loja)}
                   >
+                    Selecionar
+                  </button>
+                  <button className="btn btn-primary mx-2">Ver</button>
+                  <Link className="btn btn-secondary mx-2" to={`/editarLoja/${loja.id_loja}`}>
                     Editar
                   </Link>
                   <button
@@ -60,11 +68,11 @@ export default function Loja() {
                   >
                     Deletar
                   </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

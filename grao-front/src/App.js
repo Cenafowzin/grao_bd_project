@@ -17,39 +17,41 @@ import Clientes from './pages/Clientes';
 //ver cliente
 import AddCliente from './Cliente/AddCliente';
 import EditCliente from './Cliente/EditCliente';
-import Loja from './pages/Lojas';
 //ver loja
 //add loja
 //edit loja
 import Home from './pages/Home';
-import EditFuncionario from './Funcionario/EditFuncionario';
 import AddLoja from './Loja/AddLoja';
 import EditLoja from './Loja/EditLoja';
+import { LojaProvider } from './Loja/LojaContext';
+import Lojas from './pages/Lojas';
 
 function App() {
   return (
-    <div className="App">
-      <Router>
-      <Navbar />
-      <Routes>
-      <Route exact path = "/" element = {<Home/>} />
-        <Route exact path = "/lojas" element = {<Loja/>} />
-        <Route exact path = "/criarLoja" element = {<AddLoja/>} />
-        <Route exact path = "/editarLoja/:id_loja" element = {<EditLoja/>} />
-        <Route exact path = "/gerente" element = {<Gerente />} />
-        <Route exact path = "/produtos" element = {<Produtos />} />
-        <Route exact path = "/clientes" element = {<Clientes />} />
-        <Route exact path = "/criarCliente" element = {<AddCliente/> } />
-        <Route exact path = "/criarProduto" element = {<AddProduto/> } />
-        <Route exact path = "/editarProduto/:codigo_barras" element={<EditProduto />} />
-        <Route exact path = "/editarCliente/:id_cliente" element={<EditCliente />} />
-        <Route exact path = "/funcionarios" element = {<Funcionarios/> } />
-        <Route exact path = "/detalhesFuncionario" element = {<VerFuncionario/> } />
-        <Route exact path = "/editarFuncionario/:id_funcionario" element = {<EditFuncionario/> } />
-        <Route exact path = "/criarFuncionario" element = {<AddFuncionario/> } />
-      </Routes>
-      </Router>
-    </div>
+    <LojaProvider>
+      <div className="App">
+        <Router>
+        <Navbar />
+        <Routes>
+        <Route exact path = "/" element = {<Lojas/>} />
+          <Route exact path = "/lojas" element = {<Lojas/>} />
+          <Route exact path = "/criarLoja" element = {<AddLoja/>} />
+          <Route exact path = "/editarLoja/:id_loja" element = {<EditLoja/>} />
+          <Route exact path = "/gerente" element = {<Gerente />} />
+          <Route exact path = "/produtos" element = {<Produtos />} />
+          <Route exact path = "/clientes" element = {<Clientes />} />
+          <Route exact path = "/criarCliente" element = {<AddCliente/> } />
+          <Route exact path = "/criarProduto" element = {<AddProduto/> } />
+          <Route exact path = "/editarProduto/:codigo_barras" element={<EditProduto />} />
+          <Route exact path = "/editarCliente/:id_cliente" element={<EditCliente />} />
+          <Route exact path = "/funcionarios" element = {<Funcionarios/> } />
+          <Route exact path = "/detalhesFuncionario" element = {<VerFuncionario/> } />
+          <Route exact path = "/editarFuncionario/:id_funcionario" element = {<EditFuncionario/> } />
+          <Route exact path = "/criarFuncionario" element = {<AddFuncionario/> } />
+        </Routes>
+        </Router>
+      </div>
+    </LojaProvider>
   );
 }
 
