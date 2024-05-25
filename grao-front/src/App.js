@@ -13,12 +13,8 @@ import Produtos from './pages/Produtos';
 import AddProduto from './Produto/AddProduto';
 import EditProduto from './Produto/EditProduto';
 import Clientes from './pages/Clientes';
-//ver cliente
 import AddCliente from './Cliente/AddCliente';
 import EditCliente from './Cliente/EditCliente';
-//ver loja
-//add loja
-//edit loja
 import AddLoja from './Loja/AddLoja';
 import EditLoja from './Loja/EditLoja';
 import ViewLoja from './Loja/ViewLoja';

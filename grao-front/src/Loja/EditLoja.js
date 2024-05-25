@@ -117,7 +117,7 @@ export default function EditLoja() {
                 value={telefone}
                 onChange={onInputChange}
                 required
-                pattern="\d{1,11}"
+                pattern="\d{10,11}"
               />
             </div>
             <button type="submit" className="btn btn-primary">

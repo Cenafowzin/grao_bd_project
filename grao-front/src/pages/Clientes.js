@@ -53,7 +53,7 @@ export default function Clientes() {
         <table className="table">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">ID</th>
               <th scope="col">CPF</th>
               <th scope="col">Nome</th>
               <th scope="col">Telefone</th>
@@ -72,12 +72,6 @@ export default function Clientes() {
                 <td>{cliente.pontos_fidelidade}</td>
                 <td>{cliente.fidelizado ? "Sim" : "Não"}</td>
                 <td>
-                  <Link
-                    className="btn btn-primary mx-2"
-                    to="/detalhesCliente"
-                  >
-                    Ver
-                  </Link>
                   <Link
                     className="btn btn-secondary mx-2"
                     to={`/editarCliente/${cliente.id_cliente}`}
