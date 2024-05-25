@@ -24,6 +24,11 @@ public class ClienteController {
         return clienteRep.findCliente(id_cliente);
     }
 
+    @GetMapping("/clienteCpf/{cpf}")
+    public Cliente getCliente(@PathVariable String cpf){
+        return clienteRep.findClienteByCpf(cpf);
+    }
+
     @PostMapping("/cliente")
     public String newCliente(@RequestBody Cliente newCliente){
         clienteRep.insert(newCliente);
