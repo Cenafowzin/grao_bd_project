@@ -3,28 +3,33 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
 export default function ViewLoja() {
-  const { id_loja } = useParams(); // Obtém o ID dos parâmetros da URL
-  const [loja, setLoja] = useState({
-    rua: "",
-    cidade: "",
-    bairro: "",
-    numero: "",
-    telefone: "",
-  });
+    const { id_loja } = useParams();
+    console.log("ID da loja:", id_loja); // Adicione este log para verificar o ID recebido
 
-  useEffect(() => {
-    loadLoja();
-  }, []);
+    const [loja, setLoja] = useState(null);
+  
+    useEffect(() => {
+      if (id_loja) {
+        loadLoja(id_loja);
+      } else {
+        console.error("ID da loja não fornecido");
+      }
+    }, [id_loja]);
 
-  const loadLoja = async () => {
-    try {
-      const result = await axios.get(`http://localhost:8080/loja/${id_loja}`);
-      console.log('Loja carregada:', result.data); // Log para verificar os dados
-      setLoja(result.data);
-    } catch (error) {
-      console.error("Erro ao carregar loja:", error.response ? error.response.data : error.message);
+    const loadLoja = async () => {
+        try {
+            const result = await axios.get(`http://localhost:8080/loja/${id_loja}`);
+            console.log('Dados da loja carregados:', result.data); // Verifique os dados recebidos
+            setLoja(result.data);
+          } catch (error) {
+            console.error('Erro ao carregar loja:', error);
+          }
+    };
+
+    if (!loja) {
+        return <div>Carregando...</div>;
     }
-  };
+
 
   return (
     <div className="container">
