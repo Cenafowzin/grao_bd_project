@@ -4,7 +4,6 @@ import './App.css';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Navbar from './layout/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Gerente from './users/Gerente';
 import Funcionarios from './pages/Funcionarios';
 import VerFuncionario from './Funcionario/VerFuncionario';
 import AddFuncionario from './Funcionario/AddFuncionario';
@@ -38,7 +37,6 @@ function App() {
           <Route exact path = "/criarLoja" element = {<AddLoja/>} />
           <Route exact path = "/editarLoja/:id_loja" element = {<EditLoja/>} />
           <Route exact path = "/verLoja/:id_loja" element={<ViewLoja />} />
-          <Route exact path = "/gerente" element = {<Gerente />} />
           <Route exact path = "/produtos" element = {<Produtos />} />
           <Route exact path = "/clientes" element = {<Clientes />} />
           <Route exact path = "/criarCliente" element = {<AddCliente/> } />

@@ -32,7 +32,11 @@ export default function Lojas() {
   };
 
   const viewLoja = (id_loja) => {
-    console.log("ID da Loja:", id_loja); // Adicione este log para depuração
+    if (!id_loja) {
+      console.error("Erro: ID da loja não definido.");
+      return;
+    }
+    console.log("Navegando para ver a loja com ID:", id_loja);
     navigate(`/verLoja/${id_loja}`);
   };
 
@@ -72,7 +76,7 @@ export default function Lojas() {
                   >
                     Selecionar
                   </Link>
-                  <button className="btn btn-primary mx-2" onClick={() => viewLoja(loja.id)}>
+                  <button className="btn btn-primary mx-2" onClick={() => viewLoja(loja.id_loja)}>
                     Ver
                   </button>
                   <Link className="btn btn-secondary mx-2" to={`/editarLoja/${loja.id_loja}`}>
