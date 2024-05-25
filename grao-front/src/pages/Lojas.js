@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LojaContext } from "../Loja/LojaContext";
 
 export default function Lojas() {
   const [lojas, setLojas] = useState([]);
   const { saveLojaId } = useContext(LojaContext);
+  let navigate = useNavigate();
 
   useEffect(() => {
     loadLojas();
@@ -21,6 +22,11 @@ export default function Lojas() {
       await axios.delete(`http://localhost:8080/loja/${id_loja}`);
       loadLojas();
     }
+  };
+
+  const viewLoja = (id_loja) => {
+    console.log("ID da Loja:", id_loja); // Adicione este log para depuração
+    navigate(`/verLoja/${id_loja}`);
   };
 
   return (
@@ -58,7 +64,9 @@ export default function Lojas() {
                   >
                     Selecionar
                   </button>
-                  <button className="btn btn-primary mx-2">Ver</button>
+                  <button className="btn btn-primary mx-2" onClick={() => viewLoja(loja.id)}>
+                    Ver
+                  </button>
                   <Link className="btn btn-secondary mx-2" to={`/editarLoja/${loja.id_loja}`}>
                     Editar
                   </Link>

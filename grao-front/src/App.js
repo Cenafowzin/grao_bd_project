@@ -23,6 +23,7 @@ import EditCliente from './Cliente/EditCliente';
 import Home from './pages/Home';
 import AddLoja from './Loja/AddLoja';
 import EditLoja from './Loja/EditLoja';
+import ViewLoja from './Loja/ViewLoja';
 import { LojaProvider } from './Loja/LojaContext';
 import Lojas from './pages/Lojas';
 
@@ -37,6 +38,7 @@ function App() {
           <Route exact path = "/lojas" element = {<Lojas/>} />
           <Route exact path = "/criarLoja" element = {<AddLoja/>} />
           <Route exact path = "/editarLoja/:id_loja" element = {<EditLoja/>} />
+          <Route exact path = "/verLoja/:id_loja" element={<ViewLoja />} />
           <Route exact path = "/gerente" element = {<Gerente />} />
           <Route exact path = "/produtos" element = {<Produtos />} />
           <Route exact path = "/clientes" element = {<Clientes />} />

@@ -17,10 +17,12 @@ export default function AddLoja() {
 
   const onInputChange = (e) => {
     const { name, value } = e.target;
-    setLoja({
-      ...loja,
-      [name]: name === "numero" ? parseInt(value, 10) : value,
-    });
+    if ((name === "numero" && value.length <= 10) || (name === "telefone" && value.length <= 11) || (name !== "numero" && name !== "telefone")) {
+      setLoja({
+        ...loja,
+        [name]: value,
+      });
+    }
   };
 
   const onSubmit = async (e) => {
@@ -46,6 +48,7 @@ export default function AddLoja() {
                 name="rua"
                 value={rua}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -59,6 +62,7 @@ export default function AddLoja() {
                 name="cidade"
                 value={cidade}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -72,6 +76,7 @@ export default function AddLoja() {
                 name="bairro"
                 value={bairro}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -85,27 +90,32 @@ export default function AddLoja() {
                 name="numero"
                 value={numero}
                 onChange={onInputChange}
+                required
+                pattern="\d{1,10}"
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="Telefon" className="form-label">
+              <label htmlFor="Telefone" className="form-label">
                 Telefone
               </label>
               <input
-                type={"text"}
+                type={"number"}
                 className="form-control"
                 placeholder="Digite o telefone"
                 name="telefone"
                 value={telefone}
                 onChange={onInputChange}
+                required
+                pattern="\d{1,11}"
               />
             </div>
-            <Link className="btn btn-danger mx-2" to="/lojas">
-              Cancel
-            </Link>
+
             <button type="submit" className="btn btn-primary">
-              Submit
+              Confirmar
             </button>
+            <Link className="btn btn-danger mx-2" to="/lojas">
+              Cancelar
+            </Link>
           </form>
         </div>
       </div>
