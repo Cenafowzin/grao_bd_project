@@ -22,6 +22,9 @@ import Loja from './pages/Lojas';
 //add loja
 //edit loja
 import Home from './pages/Home';
+import EditFuncionario from './Funcionario/EditFuncionario';
+import AddLoja from './Loja/AddLoja';
+import EditLoja from './Loja/EditLoja';
 
 function App() {
   return (
@@ -31,6 +34,8 @@ function App() {
       <Routes>
       <Route exact path = "/" element = {<Home/>} />
         <Route exact path = "/lojas" element = {<Loja/>} />
+        <Route exact path = "/criarLoja" element = {<AddLoja/>} />
+        <Route exact path = "/editarLoja/:id_loja" element = {<EditLoja/>} />
         <Route exact path = "/gerente" element = {<Gerente />} />
         <Route exact path = "/produtos" element = {<Produtos />} />
         <Route exact path = "/clientes" element = {<Clientes />} />

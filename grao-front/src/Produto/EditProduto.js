@@ -28,10 +28,7 @@ export default function EditProduto() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await axios.put(
-      `http://localhost:8080/produto/${codigo_barras}`,
-      produto
-    );
+    await axios.put(`http://localhost:8080/produto/${codigo_barras}`, produto);
     navigate("/produtos");
   };
 
