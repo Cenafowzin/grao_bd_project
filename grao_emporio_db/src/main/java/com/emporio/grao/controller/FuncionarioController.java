@@ -24,6 +24,11 @@ public class FuncionarioController {
         return funcRep.findFunc(id_funcionario);
     }
 
+    @GetMapping("/funcionarioCpf/{cpf}")
+    public Funcionario getFuncionario(@PathVariable String cpf){
+        return funcRep.findFuncByCpf(cpf);
+    }
+
     @PostMapping("/funcionario")
     public String newFuncionario(@RequestBody Funcionario newFuncionario){
         funcRep.insert(newFuncionario);

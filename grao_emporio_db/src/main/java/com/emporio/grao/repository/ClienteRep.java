@@ -63,6 +63,12 @@ public class ClienteRep {
         return template.queryForObject(sql, ClienteMapper, id_cliente);
     }
 
+    public Cliente findClienteByCpf(String cpf){
+        final String sql = "select * from cliente where cpf = ?";
+
+        return template.queryForObject(sql, ClienteMapper, cpf);
+    }
+
     public List<Cliente> findAll(){
         final String sql = "select * from cliente";
 

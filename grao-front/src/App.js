@@ -20,7 +20,6 @@ import EditCliente from './Cliente/EditCliente';
 //ver loja
 //add loja
 //edit loja
-import Home from './pages/Home';
 import AddLoja from './Loja/AddLoja';
 import EditLoja from './Loja/EditLoja';
 import ViewLoja from './Loja/ViewLoja';

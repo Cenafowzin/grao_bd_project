@@ -9,6 +9,7 @@ public class Funcionario {
     private String cpf;
     private String nome;
     private String email;
+    private String senha;
     private String rua;
     private String cidade;
     private String bairro;
@@ -102,6 +103,14 @@ public class Funcionario {
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     @Override

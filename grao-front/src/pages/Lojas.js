@@ -5,12 +5,19 @@ import { LojaContext } from "../Loja/LojaContext";
 
 export default function Lojas() {
   const [lojas, setLojas] = useState([]);
-  const { saveLojaId } = useContext(LojaContext);
+  const { saveLojaId, saveLojaBairro } = useContext(LojaContext);
   let navigate = useNavigate();
 
   useEffect(() => {
     loadLojas();
+    saveLojaId(0);
+    saveLojaBairro(null);
   }, []);
+
+  const handleSelectLoja = (id, bairro) => {
+    saveLojaId(id);
+    saveLojaBairro(bairro);
+  };
 
   const loadLojas = async () => {
     const result = await axios.get("http://localhost:8080/lojas");
@@ -40,7 +47,7 @@ export default function Lojas() {
             <div className="col-md-4 mb-4" key={index}>
               <div className="card h-100">
                 <div className="card-body">
-                  <h5 className="card-title">Loja {index + 1}</h5>
+                  <h5 className="card-title">{loja.bairro}</h5>
                   <p className="card-text">
                     <strong>Rua:</strong> {loja.rua}
                   </p>
@@ -58,12 +65,13 @@ export default function Lojas() {
                   </div>
                 </div>
                 <div className="card-footer">
-                <button
+                <Link
                     className="btn btn-primary mx-2"
-                    onClick={() => saveLojaId(loja.id_loja)}
+                    onClick={() => handleSelectLoja(loja.id_loja, loja.bairro)}
+                    to="/produtos"
                   >
                     Selecionar
-                  </button>
+                  </Link>
                   <button className="btn btn-primary mx-2" onClick={() => viewLoja(loja.id)}>
                     Ver
                   </button>
