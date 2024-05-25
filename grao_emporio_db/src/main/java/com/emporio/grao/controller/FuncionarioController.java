@@ -20,13 +20,18 @@ public class FuncionarioController {
     }
 
     @GetMapping("/funcionario/{id_funcionario}")
-    public Funcionario getFuncionario(@PathVariable int id_funcionario){
+    public Funcionario getFuncionarioById(@PathVariable int id_funcionario){
         return funcRep.findFunc(id_funcionario);
     }
 
     @GetMapping("/funcionarioCpf/{cpf}")
-    public Funcionario getFuncionario(@PathVariable String cpf){
+    public Funcionario getFuncionarioByCpf(@PathVariable String cpf){
         return funcRep.findFuncByCpf(cpf);
+    }
+
+    @GetMapping("/funcionarioEmail/{email}")
+    public Funcionario getFuncionarioByEmail(@PathVariable String email){
+        return funcRep.findFuncByEmail(email);
     }
 
     @PostMapping("/funcionario")

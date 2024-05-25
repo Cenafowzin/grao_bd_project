@@ -85,6 +85,12 @@ public class FuncionarioRep {
         return template.queryForObject(sql, FuncMapper, cpf);
     }
 
+    public Funcionario findFuncByEmail(String email){
+        final String sql = "select * from funcionario where email = ?";
+
+        return template.queryForObject(sql, FuncMapper, email);
+    }
+
     public List<Funcionario> findAll(){
         final String sql = "select * from funcionario";
 
