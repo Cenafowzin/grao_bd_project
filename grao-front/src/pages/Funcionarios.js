@@ -5,8 +5,6 @@ import { Link, useParams } from "react-router-dom";
 export default function Funcionarios() {
   const [funcs, setFuncs] = useState([]);
 
-  const { id_funcionario } = useParams();
-
   useEffect(() => {
     loadFuncs();
   }, []);
