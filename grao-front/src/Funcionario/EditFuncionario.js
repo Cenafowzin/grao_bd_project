@@ -83,6 +83,8 @@ export default function EditFuncionario() {
                 name="cpf"
                 value={cpf}
                 onChange={onInputChange}
+                required
+                pattern="\d{11}"
               />
             </div>
             <div className="mb-3">
@@ -96,6 +98,7 @@ export default function EditFuncionario() {
                 name="nome"
                 value={nome}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -109,6 +112,7 @@ export default function EditFuncionario() {
                 name="email"
                 value={email}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -122,6 +126,7 @@ export default function EditFuncionario() {
                 name="rua"
                 value={rua}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -135,6 +140,7 @@ export default function EditFuncionario() {
                 name="cidade"
                 value={cidade}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -148,6 +154,7 @@ export default function EditFuncionario() {
                 name="bairro"
                 value={bairro}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -161,6 +168,7 @@ export default function EditFuncionario() {
                 name="numero"
                 value={numero}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -174,6 +182,7 @@ export default function EditFuncionario() {
                 name="salario"
                 value={salario}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -187,14 +196,16 @@ export default function EditFuncionario() {
                 name="cargo"
                 value={cargo}
                 onChange={onInputChange}
+                required
               />
             </div>
-            <Link className="btn btn-danger mx-2" to="/funcionarios">
-              Cancel
-            </Link>
             <button type="submit" className="btn btn-primary">
-              Submit
+              Confirmar
             </button>
+            <Link className="btn btn-danger mx-2" to="/funcionarios">
+              Cancelar
+            </Link>
+            
           </form>
         </div>
       </div>

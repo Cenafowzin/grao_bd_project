@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { LojaContext } from "../Loja/LojaContext";
 
 export default function Lojas() {
+  const nome = localStorage.getItem('nome');
   const [lojas, setLojas] = useState([]);
   const { saveLojaId, saveLojaBairro } = useContext(LojaContext);
   let navigate = useNavigate();
@@ -43,6 +44,7 @@ export default function Lojas() {
   return (
     <div className="container">
       <div className="py-4">
+      <h1>{nome}</h1>
         <Link className="btn btn-primary mx-2 mb-4" to="/criarLoja">
           Nova Loja
         </Link>

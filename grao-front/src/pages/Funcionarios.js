@@ -45,10 +45,9 @@ export default function Funcionarios() {
                 <td>{func.cargo}</td>
                 <td>{func.email}</td>
                 <td>
-                  <Link
-                    className="btn btn-primary mx-2"
-                    to="/detalhesFuncionario"
-                  >
+                  <Link 
+                  className="btn btn-primary mx-2" 
+                  to={`/verFuncionario/${func.id_funcionario}`}>
                     Ver
                   </Link>
                   <Link

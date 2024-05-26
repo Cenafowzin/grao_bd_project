@@ -90,8 +90,7 @@ export default function AddLoja() {
                 name="numero"
                 value={numero}
                 onChange={onInputChange}
-                required
-                pattern="\d{1,10}"
+                required               
               />
             </div>
             <div className="mb-3">

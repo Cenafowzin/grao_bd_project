@@ -24,7 +24,7 @@ export default function Navbar() {
                     <Link className="btn btn-outline-light" to ="/produtos"> Produtos</Link>
                     <Link className="btn btn-outline-light" to ="/clientes"> Clientes</Link>
                     <Link className="btn btn-outline-light" to ="/funcionarios"> Funcionarios</Link>
-                    <Link className="btn btn-outline-light" to ="/gerente"> Login</Link>
+                    <Link className="btn btn-outline-light" to ="/login"> Login</Link>
                 </div>
             </nav>
         </div>

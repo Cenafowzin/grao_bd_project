@@ -102,7 +102,6 @@ export default function EditLoja() {
                 value={numero}
                 onChange={onInputChange}
                 required
-                pattern="\d{1,10}"
               />
             </div>
             <div className="mb-3">
