@@ -110,6 +110,8 @@ export default function AddFuncionario() {
                 name="cpf"
                 value={cpf}
                 onChange={onInputChange}
+                required
+                pattern="\d{11}"
               />
             </div>
             <div className="mb-3">
@@ -123,6 +125,7 @@ export default function AddFuncionario() {
                 name="nome"
                 value={nome}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -136,6 +139,7 @@ export default function AddFuncionario() {
                 name="email"
                 value={email}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -149,6 +153,7 @@ export default function AddFuncionario() {
                 name="senha"
                 value={senha}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -162,6 +167,7 @@ export default function AddFuncionario() {
                 name="rua"
                 value={rua}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -175,6 +181,7 @@ export default function AddFuncionario() {
                 name="cidade"
                 value={cidade}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -188,6 +195,7 @@ export default function AddFuncionario() {
                 name="bairro"
                 value={bairro}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -201,6 +209,7 @@ export default function AddFuncionario() {
                 name="numero"
                 value={numero}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -214,6 +223,7 @@ export default function AddFuncionario() {
                 name="salario"
                 value={salario}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -227,6 +237,7 @@ export default function AddFuncionario() {
                 name="cargo"
                 value={cargo}
                 onChange={onInputChange}
+                required
               />
             </div>
             <div className="mb-3">
@@ -242,6 +253,8 @@ export default function AddFuncionario() {
                     name="numero"
                     value={telefone.numero}
                     onChange={(e) => handleTelefoneChange(index, e)}
+                    required
+                    pattern="\d{10,11}"
                   />
                   <button
                     type="button"
@@ -260,12 +273,13 @@ export default function AddFuncionario() {
                 Adicionar Telefone
               </button>
             </div>
-            <Link className="btn btn-danger mx-2" to="/funcionarios">
-              Cancel
-            </Link>
             <button type="submit" className="btn btn-primary">
-              Submit
+              Confirmar
             </button>
+            <Link className="btn btn-danger mx-2" to="/funcionarios">
+              Cancelar
+            </Link>
+            
           </form>
         </div>
       </div>

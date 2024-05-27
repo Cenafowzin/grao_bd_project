@@ -5,7 +5,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import Navbar from './layout/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Funcionarios from './pages/Funcionarios';
-import VerFuncionario from './Funcionario/VerFuncionario';
+import ViewFuncionario from './Funcionario/ViewFuncionario';
 import AddFuncionario from './Funcionario/AddFuncionario';
 import EditFuncionario from './Funcionario/EditFuncionario';
 import Produtos from './pages/Produtos';
@@ -20,6 +20,7 @@ import EditLoja from './Loja/EditLoja';
 import ViewLoja from './Loja/ViewLoja';
 import { LojaProvider } from './Loja/LojaContext';
 import Lojas from './pages/Lojas';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -40,9 +41,10 @@ function App() {
           <Route exact path = "/editarProduto/:codigo_barras" element={<EditProduto />} />
           <Route exact path = "/editarCliente/:id_cliente" element={<EditCliente />} />
           <Route exact path = "/funcionarios" element = {<Funcionarios/> } />
-          <Route exact path = "/detalhesFuncionario" element = {<VerFuncionario/> } />
+          <Route exact path = "/verFuncionario/:id_funcionario" element={<ViewFuncionario />} />
           <Route exact path = "/editarFuncionario/:id_funcionario" element = {<EditFuncionario/> } />
           <Route exact path = "/criarFuncionario" element = {<AddFuncionario/> } />
+          <Route exact path = "/login" element={<Login />} />
         </Routes>
         </Router>
       </div>
