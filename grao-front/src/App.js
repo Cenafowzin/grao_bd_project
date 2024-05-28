@@ -26,25 +26,42 @@ import FazerLogin from './Login/FazerLogin';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
       setIsAuthenticated(true);
     }
+    setIsAuthLoading(false);
   }, []);
+
+  const handleLogin = (token) => {
+    localStorage.setItem('token', token);
+    setIsAuthenticated(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    setIsAuthenticated(false);
+  };
 
   const renderPrivateRoute = (Component, props) => {
     return isAuthenticated ? <Component {...props} /> : <Navigate to="/login" replace />;
   };
 
+  // Renderizar o componente de carregamento enquanto a autenticação está sendo verificada
+  if (isAuthLoading) {
+    return <div>Carregando...</div>;
+  }
+
   return (
     <LojaProvider>
       <div className="App">
         <Router>
-        <Navbar />
+        <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout}/>
         <Routes>
-          <Route exact path = "/login" element={<FazerLogin setIsAuthenticated={setIsAuthenticated}/>} />
+          <Route exact path = "/login" element={<FazerLogin handleLogin={handleLogin}/>} />
           <Route path="/" element={renderPrivateRoute(Lojas)} />
           <Route path="/lojas" element={renderPrivateRoute(Lojas)} />
           <Route path="/criarLoja" element = {renderPrivateRoute(AddLoja)} />
