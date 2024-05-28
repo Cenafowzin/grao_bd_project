@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { LojaContext } from "../Loja/LojaContext";
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState([]);
   const [search, setSearch] = useState("");
+  const { selectedLojaId } = useContext(LojaContext);
 
   useEffect(() => {
     loadProdutos();
   }, []);
 
   const loadProdutos = async () => {
-    const result = await axios.get("http://localhost:8080/produtos");
+    const result = await axios.get(`http://localhost:8080/produtos/${selectedLojaId}`);
     setProdutos(result.data);
   };
 
@@ -33,8 +35,9 @@ export default function Produtos() {
   return (
     <div className="container">
       <div className="py-4">
+        <h1>Produtos</h1>
         <div className="d-flex justify-content-between align-items-center mb-3">
-          <Link className="btn btn-primary mx-2" to="/criarProduto">
+          <Link className="btn btn-dark mx-2" style={{ backgroundColor: '#B21D9B' }} to="/criarProduto">
             Novo Produto
           </Link>
           <input
@@ -61,12 +64,6 @@ export default function Produtos() {
                 <td>{produto.descricao}</td>
                 <td>{produto.valor_unitario}</td>
                 <td>
-                  <Link
-                    className="btn btn-primary mx-2"
-                    to={`/detalhesProduto/${produto.codigo_barras}`}
-                  >
-                    Ver
-                  </Link>
                   <Link
                     className="btn btn-secondary mx-2"
                     to={`/editarProduto/${produto.codigo_barras}`}

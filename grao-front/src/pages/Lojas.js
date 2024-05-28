@@ -10,9 +10,13 @@ export default function Lojas() {
   let navigate = useNavigate();
 
   useEffect(() => {
-    loadLojas();
-    saveLojaId(0);
-    saveLojaBairro("selecione uma loja");
+    const timeout = setTimeout(() => {
+      loadLojas();
+      saveLojaId(0);
+      saveLojaBairro("selecione uma loja");
+      }, 1);
+      
+      return () => clearTimeout(timeout); // Limpa o timeout ao desmontar o componente
   }, []);
 
   const handleSelectLoja = (id, bairro) => {
@@ -44,10 +48,12 @@ export default function Lojas() {
   return (
     <div className="container">
       <div className="py-4">
-      <h1>{nome}</h1>
-        <Link className="btn btn-primary mx-2 mb-4" to="/criarLoja">
+      <h1>Lojas</h1>
+      <div className="d-flex justify-content-start mb-4">
+        <Link className="btn btn-dark mx-2 mb-4" to="/criarLoja" style={{ backgroundColor: '#B21D9B' }}>
           Nova Loja
         </Link>
+      </div>
         <div className="row">
           {lojas.map((loja, index) => (
             <div className="col-md-4 mb-4" key={index}>
@@ -72,13 +78,13 @@ export default function Lojas() {
                 </div>
                 <div className="card-footer">
                 <Link
-                    className="btn btn-primary mx-2"
+                    className="btn btn-dark mx-2 " style={{ backgroundColor: '#B21D9B' }}
                     onClick={() => handleSelectLoja(loja.id_loja, loja.bairro)}
                     to="/produtos"
                   >
                     Selecionar
                   </Link>
-                  <button className="btn btn-primary mx-2" onClick={() => viewLoja(loja.id_loja)}>
+                  <button className="btn btn-dark mx-2" style={{ backgroundColor: '#B21D9B' }} onClick={() => viewLoja(loja.id_loja)}>
                     Ver
                   </button>
                   <Link className="btn btn-secondary mx-2" to={`/editarLoja/${loja.id_loja}`}>

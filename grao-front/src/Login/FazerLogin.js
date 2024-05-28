@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import grao_logo2 from '../Images/grao_logo2.png'; // Importe sua logo aqui
 
 function FazerLogin({ handleLogin }) {
     const [credenciais, setCredenciais] = useState({ email: '', senha: '' });
@@ -25,8 +26,9 @@ function FazerLogin({ handleLogin }) {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', height: '100vh' }}>
-            <form onSubmit={handleLoginSubmit} style={{ width: '300px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', backgroundColor: '#43B02A' }}>
+            <form onSubmit={handleLoginSubmit} style={{ width: '300px', textAlign: 'center', backgroundColor: '#FFF', padding: '20px', borderRadius: '10px' }}>
+                <img src={grao_logo2} alt="grao_logo2" style={{ width: '100px', marginBottom: '20px' }} />
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
                     <input
@@ -51,7 +53,7 @@ function FazerLogin({ handleLogin }) {
                         required
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-dark" style={{ backgroundColor: '#B21D9B' }}>Login</button>
             </form>
         </div>
     );

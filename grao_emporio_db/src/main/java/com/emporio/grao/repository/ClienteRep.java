@@ -96,4 +96,10 @@ public class ClienteRep {
 
         return template.query(sql, ClienteMapper);
     }
+
+    public List<Cliente> findAllLoja(int id_loja){
+        final String sql = "select * from cliente c, cliente_loja cl where c.id_cliente = cl.id_cliente and cl.id_loja = ?";
+
+        return template.query(sql, ClienteMapper, id_loja);
+    }
 }

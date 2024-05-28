@@ -19,6 +19,11 @@ public class ClienteController {
         return clienteRep.findAll();
     }
 
+    @GetMapping("/clientes/{id_loja}")
+    public List<Cliente> getAllClientesLoja(@PathVariable int id_loja){
+        return clienteRep.findAllLoja(id_loja);
+    }
+
     @GetMapping("/cliente/{id_cliente}")
     public Cliente getCliente(@PathVariable int id_cliente){
         return clienteRep.findCliente(id_cliente);

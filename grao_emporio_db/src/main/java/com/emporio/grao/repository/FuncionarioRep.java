@@ -96,4 +96,10 @@ public class FuncionarioRep {
 
         return template.query(sql, FuncMapper);
     }
+
+    public List<Funcionario> findAllLojas(int id_loja){
+        final String sql = "select * from funcionario f, funcionario_loja fl where f.id_funcionario = fl.id_funcionario and fl.id_loja = ?";
+
+        return template.query(sql, FuncMapper, id_loja);
+    }
 }

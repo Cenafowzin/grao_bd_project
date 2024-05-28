@@ -1,10 +1,21 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { LojaContext } from "../Loja/LojaContext";
 
 export default function Relatorio() {
   const [faturamentosLoja, setFaturamentos] = useState([]);
   const [faturamentoTotal, setFaturamento] = useState("");
   const [faturamentoProdutos, setFaturamentosProdutos] = useState([]);
+  const { saveLojaId, saveLojaBairro } = useContext(LojaContext);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      saveLojaId(0);
+      saveLojaBairro("selecione uma loja");
+      }, 1);
+      
+      return () => clearTimeout(timeout); // Limpa o timeout ao desmontar o componente
+  }, []);
 
   useEffect(() => {
     loadFaturamentoTotal();

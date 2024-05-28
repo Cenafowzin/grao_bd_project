@@ -10,6 +10,10 @@ export default function Navbar({ isAuthenticated, handleLogout }) {
     handleLogout();
   };
 
+  if (!isAuthenticated) {
+    return null;
+  }
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark" style={{ backgroundColor: '#43B02A' }}>
             <div className="container-fluid">
@@ -28,22 +32,31 @@ export default function Navbar({ isAuthenticated, handleLogout }) {
                             <Link className="nav-link" style={{ color: '#FFF' }} to="/lojas">Lojas</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" style={{ color: '#FFF' }} to="/produtos">Produtos</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" style={{ color: '#FFF' }} to="/realizarVenda">Venda</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" style={{ color: '#FFF' }} to="/clientes">Clientes</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" style={{ color: '#FFF' }} to="/funcionarios">Funcionarios</Link>
-                        </li>
-                        <li className="nav-item">
                             <Link className="nav-link" style={{ color: '#FFF' }} to="/backups">Backups</Link>
                         </li>
+                        {selectedLojaId !== 0 && (
+                            <>
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={{ color: '#FFF' }} to="/produtos">Produtos</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={{ color: '#FFF' }} to="/realizarVenda">Venda</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={{ color: '#FFF' }} to="/clientes">Clientes</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" style={{ color: '#FFF' }} to="/funcionarios">Funcionarios</Link>
+                                </li>
+                            </>
+                        )}
                     </ul>
-                    <div className="d-flex">
+                    <div className="d-flex align-items-center">
+                    {selectedLojaId !== 0 && (
+                    <div className="text-light me-3">
+                        Loja: {selectedLojaBairro}
+                    </div>
+                    )}
                     {isAuthenticated ? (
                         <button className="btn btn-outline-light" onClick={handleLogoutClick}>Sair</button>
                     ) : (

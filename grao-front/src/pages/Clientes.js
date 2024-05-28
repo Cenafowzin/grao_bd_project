@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { LojaContext } from "../Loja/LojaContext";
 
 export default function Clientes() {
   const [clientes, setClientes] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const { selectedLojaId } = useContext(LojaContext);
 
   useEffect(() => {
     loadClientes();
   }, []);
 
   const loadClientes = async () => {
-    const result = await axios.get("http://localhost:8080/clientes");
+    const result = await axios.get(`http://localhost:8080/clientes/${selectedLojaId}`);
     const clientesFidelizados = result.data.filter(
       (cliente) => cliente.fidelizado
     );
@@ -37,8 +39,9 @@ export default function Clientes() {
   return (
     <div className="container">
       <div className="py-4">
+        <h1>Clientes</h1>
         <div className="d-flex justify-content-between align-items-center mb-3">
-          <Link className="btn btn-primary mx-2" to="/criarCliente">
+          <Link className="btn btn-dark mx-2" to="/criarCliente" style={{ backgroundColor: '#B21D9B' }}>
             Novo Cliente
           </Link>
           <input

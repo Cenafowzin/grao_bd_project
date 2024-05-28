@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { LojaContext } from "../Loja/LojaContext";
 
 export default function AddVenda() {
   let navigate = useNavigate();
@@ -13,6 +14,7 @@ export default function AddVenda() {
   const [quantities, setQuantities] = useState({});
   const [pedido, setPedido] = useState({ valor_total: 0 });
   const [erroAoBuscarCliente, setErroAoBuscarCliente] = useState(false);
+  const { selectedLojaId } = useContext(LojaContext);
 
   useEffect(() => {
     loadProdutos();
@@ -24,7 +26,7 @@ export default function AddVenda() {
   }, [selectedProdutos]);
 
   const loadProdutos = async () => {
-    const result = await axios.get("http://localhost:8080/produtos");
+    const result = await axios.get(`http://localhost:8080/produtos/${selectedLojaId}`);
     setProdutos(result.data);
   };
 
@@ -156,7 +158,7 @@ export default function AddVenda() {
                   onChange={handleCpfChange}
                 />
                 <button
-                  className="btn btn-primary mx-2"
+                  className="btn btn-dark mx-2" style={{ backgroundColor: '#B21D9B' }}
                   onClick={(e) => findCliente(e, cpf)}
                 >
                   Buscar
@@ -171,7 +173,7 @@ export default function AddVenda() {
                   <p>Pontos: {cliente.pontos_fidelidade}</p>
                 </div>
               )}
-              <Link className="btn btn-primary mx-2" to="/criarCliente">
+              <Link className="btn btn-dark mx-2" style={{ backgroundColor: '#B21D9B' }} to="/criarCliente">
                   Cadastrar cliente
                 </Link>
               <h3>Produtos Selecionados</h3>
@@ -206,16 +208,16 @@ export default function AddVenda() {
                 Total: R$ {pedido.valor_total.toFixed(2)}
               </h4>
             </div>
-            <Link className="btn btn-danger mx-2" to="/produtos">
-              Cancelar
-            </Link>
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-dark" style={{ backgroundColor: '#B21D9B' }}
               onClick={(e) => sendSell(e, pedido)}
             >
               Enviar
             </button>
+            <Link className="btn btn-danger mx-2" to="/lojas">
+              Cancelar
+            </Link>
           </form>
         </div>
       </div>
@@ -256,7 +258,7 @@ export default function AddVenda() {
                       }
                     />
                     <button
-                      className="btn btn-primary mx-2"
+                      className="btn btn-dark mx-2" style={{ backgroundColor: '#B21D9B' }}
                       onClick={() => selectProduto(produto)}
                     >
                       Adicionar

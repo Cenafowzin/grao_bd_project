@@ -5,15 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ea5fc5a-a43f-4d19-8c7e-e8c4c6f28949" name="Changes" comment="">
-<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/../grao-front/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/Backup/BackupSelector.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/Backup/BackupSelector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/Cliente/AddCliente.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/Cliente/AddCliente.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/Login/FazerLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/Login/FazerLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/Produto/AddProduto.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/Produto/AddProduto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/Venda/AddVenda.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/Venda/AddVenda.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../grao-front/src/layout/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/layout/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/pages/Lojas.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/pages/Lojas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../grao-front/src/pages/Relatorio.js" beforeDir="false" afterPath="$PROJECT_DIR$/../grao-front/src/pages/Relatorio.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/RelatorioRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/RelatorioRep.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncionarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/FuncionarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/controller/ProdutoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/ClienteRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/ClienteRep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/FuncionarioRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/FuncionarioRep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/ProdutoRep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/emporio/grao/repository/ProdutoRep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
->>>>>>> 5e2bc8869afacba9afc862373d560e9cf29365e1
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,18 +38,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Arrudadiego"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Arrudadiego&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Cenafowzin/grao_bd_project.git",
-    "accountId": "d3b629d7-423e-46aa-9e98-5854ff965b8c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Cenafowzin/grao_bd_project.git&quot;,
+    &quot;accountId&quot;: &quot;d3b629d7-423e-46aa-9e98-5854ff965b8c&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>

@@ -120,8 +120,8 @@ export default function AddCliente() {
             </div>
             <div className="mb-3">
             </div>
-            <button type="submit" className="btn btn-primary">
-              Confirmar
+            <button type="submit" className="btn btn-dark" style={{ backgroundColor: '#B21D9B' }}>
+              Enviar
             </button>
             <Link className="btn btn-danger mx-2" to="/clientes">
               Cancelar

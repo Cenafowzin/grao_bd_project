@@ -58,4 +58,10 @@ public class ProdutoRep {
 
         return template.query(sql, ProdutoMapper);
     }
+
+    public List<Produto> findAllLoja(int id_loja){
+        final String sql = "select * from produto p, produto_loja pl where p.codigo_barras = pl.codigo_produto and pl.id_loja = ?";
+
+        return template.query(sql, ProdutoMapper, id_loja);
+    }
 }

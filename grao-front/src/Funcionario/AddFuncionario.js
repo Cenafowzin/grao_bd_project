@@ -261,20 +261,20 @@ export default function AddFuncionario() {
                     className="btn btn-danger ms-2"
                     onClick={() => removeTelefone(index)}
                   >
-                    Remover
+                    X
                   </button>
                 </div>
               ))}
               <button
                 type="button"
-                className="btn btn-primary"
+                className="btn btn-dark" style={{ backgroundColor: '#B21D9B' }}
                 onClick={addTelefone}
               >
                 Adicionar Telefone
               </button>
             </div>
-            <button type="submit" className="btn btn-primary">
-              Confirmar
+            <button type="submit" className="btn btn-dark" style={{ backgroundColor: '#B21D9B' }}>
+              Enviar
             </button>
             <Link className="btn btn-danger mx-2" to="/funcionarios">
               Cancelar

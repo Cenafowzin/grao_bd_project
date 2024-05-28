@@ -119,8 +119,8 @@ export default function EditLoja() {
                 pattern="\d{10,11}"
               />
             </div>
-            <button type="submit" className="btn btn-primary">
-              Confirmar
+            <button type="submit" className="btn btn-dark" style={{ backgroundColor: '#B21D9B' }}>
+              Salvar
             </button>
             <Link className="btn btn-danger mx-2" to="/lojas">
               Cancelar

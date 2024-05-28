@@ -133,7 +133,7 @@ export default function EditCliente() {
                 onChange={onInputChange}
               />
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-dark" style={{ backgroundColor: '#B21D9B' }}>
               Salvar
             </button>
             <Link className="btn btn-danger mx-2" to="/clientes">

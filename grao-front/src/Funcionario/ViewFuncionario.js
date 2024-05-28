@@ -46,7 +46,7 @@ export default function ViewFuncionario() {
                             <p className="card-text"><strong>Número:</strong> {funcionario.numero}</p>
                         </div>
                     </div>
-                    <Link to="/funcionarios" className="btn btn-primary mt-3">Voltar</Link>
+                    <Link to="/funcionarios" className="btn btn-dark mt-3" style={{ backgroundColor: '#B21D9B' }}>Voltar</Link>
                 </div>
             </div>
         </div>

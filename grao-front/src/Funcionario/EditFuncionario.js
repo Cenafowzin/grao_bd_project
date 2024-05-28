@@ -199,8 +199,8 @@ export default function EditFuncionario() {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-primary">
-              Confirmar
+            <button type="submit" className="btn btn-dark" style={{ backgroundColor: '#B21D9B' }}>
+              Salvar
             </button>
             <Link className="btn btn-danger mx-2" to="/funcionarios">
               Cancelar

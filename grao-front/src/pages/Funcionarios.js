@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
+import { LojaContext } from "../Loja/LojaContext";
 
 export default function Funcionarios() {
   const [funcs, setFuncs] = useState([]);
+  const { selectedLojaId } = useContext(LojaContext);
 
   useEffect(() => {
     loadFuncs();
   }, []);
 
   const loadFuncs = async () => {
-    const result = await axios.get("http://localhost:8080/funcionarios");
+    const result = await axios.get(`http://localhost:8080/funcionarios/${selectedLojaId}`);
     setFuncs(result.data);
   };
 
@@ -24,9 +26,12 @@ export default function Funcionarios() {
   return (
     <div className="container">
       <div className="py-4">
-        <Link className="btn btn-primary mx-2" to="/criarFuncionario">
-          Novo Funcionário
-        </Link>
+        <h1>Funcionários</h1>
+        <div className="d-flex justify-content-between align-items-center mb-3">
+          <Link className="btn btn-dark mx-2" style={{ backgroundColor: '#B21D9B' }} to="/criarFuncionario">
+            Novo Funcionário
+          </Link>
+        </div>
         <table className="table">
           <thead>
             <tr>
@@ -46,7 +51,7 @@ export default function Funcionarios() {
                 <td>{func.email}</td>
                 <td>
                   <Link 
-                  className="btn btn-primary mx-2" 
+                  className="btn btn-dark mx-2" style={{ backgroundColor: '#B21D9B' }}
                   to={`/verFuncionario/${func.id_funcionario}`}>
                     Ver
                   </Link>

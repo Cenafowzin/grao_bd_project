@@ -62,12 +62,10 @@ function App() {
     <LojaProvider>
       <div className="App">
         <Router>
-        <Routes>
-          <Route exact path = "/login" element={<FazerLogin handleLogin={handleLogin}/>} />
-        </Routes>
           <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout}/>
         <Routes>
-          <Route path="/" element={renderPrivateRoute(Lojas)} />
+          <Route exact path = "/login" element={<FazerLogin handleLogin={handleLogin}/>} />
+          <Route path="/" element={renderPrivateRoute(Relatorio)} />
           <Route path="/lojas" element={renderPrivateRoute(Lojas)} />
           <Route path="/criarLoja" element = {renderPrivateRoute(AddLoja)} />
           <Route path="/editarLoja/:id_loja" element = {renderPrivateRoute(EditLoja)} />

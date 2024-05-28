@@ -19,6 +19,11 @@ public class ProdutoController {
         return produtoRep.findAll();
     }
 
+    @GetMapping("/produtos/{id_loja}")
+    public List<Produto> getAllProdutosLoja(@PathVariable int id_loja){
+        return produtoRep.findAllLoja(id_loja);
+    }
+
     @GetMapping("/produto/{codigo_barras}")
     public Produto getProduto(@PathVariable String codigo_barras){
         return  produtoRep.findoProduto(codigo_barras);

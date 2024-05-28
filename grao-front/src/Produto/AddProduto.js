@@ -94,12 +94,12 @@ export default function AddProduto() {
                 required
               />
             </div>
-            <Link className="btn btn-danger mx-2" to="/produtos">
-              Cancel
-            </Link>
-            <button type="submit" className="btn btn-primary">
-              Submit
+            <button type="submit" className="btn btn-dark" style={{ backgroundColor: '#B21D9B' }}>
+              Enviar
             </button>
+            <Link className="btn btn-danger mx-2" to="/produtos">
+              Cancelar
+            </Link>
           </form>
         </div>
       </div>

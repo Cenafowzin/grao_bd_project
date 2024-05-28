@@ -19,6 +19,11 @@ public class FuncionarioController {
         return funcRep.findAll();
     }
 
+    @GetMapping("/funcionarios/{id_loja}")
+    public List<Funcionario> getAllFuncsLojas(@PathVariable int id_loja){
+        return funcRep.findAllLojas(id_loja);
+    }
+
     @GetMapping("/funcionario/{id_funcionario}")
     public Funcionario getFuncionarioById(@PathVariable int id_funcionario){
         return funcRep.findFunc(id_funcionario);
