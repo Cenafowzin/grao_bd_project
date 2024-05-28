@@ -24,6 +24,7 @@ import AddVenda from './Venda/AddVenda';
 import { useEffect, useState } from 'react';
 import FazerLogin from './Login/FazerLogin';
 import BackupSelector from './Backup/BackupSelector';
+import Relatorio from './pages/Relatorio';
 
 
 function App() {
@@ -82,6 +83,7 @@ function App() {
           <Route exact path = "/editarFuncionario/:id_funcionario" element = {renderPrivateRoute(EditFuncionario)} />
           <Route exact path = "/verFuncionario/:id_funcionario" element={renderPrivateRoute(ViewFuncionario)} />
           <Route exact path = "/realizarVenda" element = {renderPrivateRoute(AddVenda)} />
+          <Route exact path = "/relatorio" element={renderPrivateRoute(Relatorio)} />
           <Route exact path = "/backups" element={renderPrivateRoute(BackupSelector)} />
         </Routes>
         </Router>
