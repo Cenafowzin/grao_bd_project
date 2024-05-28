@@ -61,9 +61,11 @@ function App() {
     <LojaProvider>
       <div className="App">
         <Router>
-        <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout}/>
         <Routes>
           <Route exact path = "/login" element={<FazerLogin handleLogin={handleLogin}/>} />
+        </Routes>
+          <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout}/>
+        <Routes>
           <Route path="/" element={renderPrivateRoute(Lojas)} />
           <Route path="/lojas" element={renderPrivateRoute(Lojas)} />
           <Route path="/criarLoja" element = {renderPrivateRoute(AddLoja)} />
