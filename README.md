@@ -59,3 +59,8 @@ Após a instalação, digite novamente "npm start" e aguarde. <br>O VSCode abrir
 
 # 9
 Todas as alterações no site poderão ser vistas no banco de dados por meio do DBeaver
+
+# INSTRUÇÕES PARA LOGIN
+Para fazer o login inicial, é necessário um e-mail e senha de funcionário. Todos os e-mails dos funcionários podem ser visualizados pelo DBeaver após alimentação da planilha.<br>Disponibilizo aqui o e-mail de um funcionário-gerente para uso:
+<br>E-mail: rcarlos@gmail.com
+<br>Senha: 1234
