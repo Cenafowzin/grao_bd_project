@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function FazerLogin() {
+function FazerLogin({ setIsAuthenticated }) {
     const [credenciais, setCredenciais] = useState({ email: '', senha: '' });
     const navigate = useNavigate();
-    const [error, setError] = useState('');  // Adiciona estado para erro
+    const [error, setError] = useState('');
 
     const handleInputChange = (e) => {
         setCredenciais({ ...credenciais, [e.target.name]: e.target.value });
@@ -18,7 +18,8 @@ function FazerLogin() {
             const nome = response.data.nome;
             localStorage.setItem('nome', nome);
             localStorage.setItem('idFuncionario', response.data.id_funcionario);
-            navigate('/lojas');
+            setIsAuthenticated(true);
+            navigate('/');
         } catch (error) {
             console.error('Erro no login:', error.response ? error.response.data : error.message);
             alert('Falha no login: ' + (error.response ? error.response.data : error.message));
