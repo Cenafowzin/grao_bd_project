@@ -15,8 +15,9 @@ function FazerLogin() {
         event.preventDefault();
         try {
             const response = await axios.post('http://localhost:8080/api/login', credenciais);
-            const nome = response.data;
+            const nome = response.data.nome;
             localStorage.setItem('nome', nome);
+            localStorage.setItem('idFuncionario', response.data.id_funcionario);
             navigate('/lojas');
         } catch (error) {
             console.error('Erro no login:', error.response ? error.response.data : error.message);

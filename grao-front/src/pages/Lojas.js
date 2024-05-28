@@ -12,7 +12,7 @@ export default function Lojas() {
   useEffect(() => {
     loadLojas();
     saveLojaId(0);
-    saveLojaBairro(null);
+    saveLojaBairro("selecione uma loja");
   }, []);
 
   const handleSelectLoja = (id, bairro) => {

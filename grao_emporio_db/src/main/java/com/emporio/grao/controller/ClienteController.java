@@ -29,6 +29,11 @@ public class ClienteController {
         return clienteRep.findClienteByCpf(cpf);
     }
 
+    @GetMapping("/clienteNull")
+    public Cliente getClienteNull(){
+        return clienteRep.findOrCreateClienteNull();
+    }
+
     @PostMapping("/cliente")
     public String newCliente(@RequestBody Cliente newCliente){
         clienteRep.insert(newCliente);

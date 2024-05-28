@@ -7,7 +7,6 @@ export const LojaProvider = ({ children }) => {
   const [selectedLojaBairro, setSelectedLojaBairro] = useState(null);
 
   useEffect(() => {
-    // Carregar o ID da loja do Local Storage quando o componente for montado
     const savedLojaId = localStorage.getItem("selectedLojaId");
     if (savedLojaId) {
       setSelectedLojaId(savedLojaId);

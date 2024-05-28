@@ -69,6 +69,28 @@ public class ClienteRep {
         return template.queryForObject(sql, ClienteMapper, cpf);
     }
 
+    public Cliente findClienteNull(){
+        final String sql = "select * from cliente where cpf is null";
+        try {
+            return template.queryForObject(sql, ClienteMapper);
+        } catch (org.springframework.dao.EmptyResultDataAccessException ex) {
+            return null;
+        }
+    }
+
+    public Cliente findOrCreateClienteNull() {
+        Cliente clienteNull = findClienteNull();
+        if (clienteNull == null) {
+            Cliente novoCliente = new Cliente();
+            novoCliente.setCpf(null);
+            insert(novoCliente);
+
+            return novoCliente;
+        } else {
+            return clienteNull;
+        }
+    }
+
     public List<Cliente> findAll(){
         final String sql = "select * from cliente";
 

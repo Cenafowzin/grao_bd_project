@@ -16,12 +16,16 @@ export default function Navbar() {
                     <Link className="btn" to ="/lojas">
                         <span className="fa-solid fa-arrow-left"></span>
                     </Link>
-                    {selectedLojaId !== 0 && selectedLojaId !== null && selectedLojaBairro !== null ? (
-                        <div>
-                            <h2>{selectedLojaBairro}</h2>
-                        </div>
-                    ) : null}
+                    <div className="d-flex justify-content-between align-items-center mb-3">
+                        <h3 className="mx-2">Loja:</h3>
+                        {selectedLojaId !== null && selectedLojaBairro !== null ? (
+                            <div>
+                                <h3>{selectedLojaBairro}</h3>
+                            </div>
+                        ) : null}
+                    </div>
                     <Link className="btn btn-outline-light" to ="/produtos"> Produtos</Link>
+                    <Link className="btn btn-outline-light" to ="/realizarVenda"> Venda</Link>
                     <Link className="btn btn-outline-light" to ="/clientes"> Clientes</Link>
                     <Link className="btn btn-outline-light" to ="/funcionarios"> Funcionarios</Link>
                     <Link className="btn btn-outline-light" to ="/login"> Login</Link>

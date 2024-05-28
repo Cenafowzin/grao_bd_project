@@ -10,7 +10,7 @@ export default function AddProduto() {
   const [produto, setProduto] = useState({
     codigo_barras: "",
     descricao: "",
-    valor_unitario: "",
+    valor_unitario: ""
   });
 
   const [produto_loja] = useState({

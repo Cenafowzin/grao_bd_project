@@ -24,6 +24,11 @@ public class PedidoController {
         return pedidoRep.findPedido(id_pedido);
     }
 
+    @GetMapping("/lastPedido")
+    public Pedido getLastPedido(){
+        return pedidoRep.findLastPedido();
+    }
+
     @PostMapping("/pedido")
     public String newPedido(@RequestBody Pedido newPedido){
         pedidoRep.insert(newPedido);

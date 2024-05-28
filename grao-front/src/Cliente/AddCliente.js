@@ -12,7 +12,7 @@ export default function AddCliente() {
     nome: "",
     telefone: "",
     pontos_fidelidade: 0,
-    fidelizado: false,
+    fidelizado: true,
   });
 
   const [cliente_loja] = useState({
@@ -119,18 +119,6 @@ export default function AddCliente() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="fidelizado" className="form-label">
-                Fidelizado
-              </label>
-              <select
-                className="form-select"
-                name="fidelizado"
-                value={fidelizado}
-                onChange={onInputChange}
-              >
-                <option value={false}>Não</option>
-                <option value={true}>Sim</option>
-              </select>
             </div>
             <button type="submit" className="btn btn-primary">
               Confirmar

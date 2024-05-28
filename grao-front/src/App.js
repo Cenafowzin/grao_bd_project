@@ -21,12 +21,16 @@ import ViewLoja from './Loja/ViewLoja';
 import { LojaProvider } from './Loja/LojaContext';
 import Lojas from './pages/Lojas';
 import Login from './pages/Login';
+import AddVenda from './Venda/AddVenda';
 
 function App() {
   return (
     <LojaProvider>
       <div className="App">
         <Router>
+        <Routes>
+          <Route exact path = "/login" element={<Login />} />
+        </Routes>
         <Navbar />
         <Routes>
           <Route exact path = "/" element = {<Lojas/>} /> 
@@ -34,17 +38,17 @@ function App() {
           <Route exact path = "/criarLoja" element = {<AddLoja/>} />
           <Route exact path = "/editarLoja/:id_loja" element = {<EditLoja/>} />
           <Route exact path = "/verLoja/:id_loja" element={<ViewLoja />} />
-          <Route exact path = "/produtos" element = {<Produtos />} />
           <Route exact path = "/clientes" element = {<Clientes />} />
           <Route exact path = "/criarCliente" element = {<AddCliente/> } />
+          <Route exact path = "/editarCliente/:id_cliente" element={<EditCliente />} />
+          <Route exact path = "/produtos" element = {<Produtos />} />
           <Route exact path = "/criarProduto" element = {<AddProduto/> } />
           <Route exact path = "/editarProduto/:codigo_barras" element={<EditProduto />} />
-          <Route exact path = "/editarCliente/:id_cliente" element={<EditCliente />} />
           <Route exact path = "/funcionarios" element = {<Funcionarios/> } />
-          <Route exact path = "/verFuncionario/:id_funcionario" element={<ViewFuncionario />} />
-          <Route exact path = "/editarFuncionario/:id_funcionario" element = {<EditFuncionario/> } />
           <Route exact path = "/criarFuncionario" element = {<AddFuncionario/> } />
-          <Route exact path = "/login" element={<Login />} />
+          <Route exact path = "/editarFuncionario/:id_funcionario" element = {<EditFuncionario/> } />
+          <Route exact path = "/verFuncionario/:id_funcionario" element={<ViewFuncionario />} />
+          <Route exact path = "/realizarVenda" element = {<AddVenda/> } />
         </Routes>
         </Router>
       </div>

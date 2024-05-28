@@ -54,6 +54,12 @@ public class PedidoRep {
         return template.queryForObject(sql, PedidoMapper, id_pedido);
     }
 
+    public Pedido findLastPedido(){
+        final String sql = "select * from pedido order by data_hora desc limit 1";
+
+        return template.queryForObject(sql, PedidoMapper);
+    }
+
     public List<Pedido> findAll(){
         final String sql = "select * from pedido";
 
