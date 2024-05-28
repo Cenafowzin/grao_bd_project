@@ -56,10 +56,6 @@ insert into cliente (cpf, nome, telefone, pontos_fidelidade, fidelizado) values 
 insert into cliente (cpf, nome, telefone, pontos_fidelidade, fidelizado) values ('98765432104', 'JULIANA PEREIRA', '8194444444', 0, true);
 insert into cliente (cpf, nome, telefone, pontos_fidelidade, fidelizado) values ('45678912305', 'LUCAS OLIVEIRA', '8195555555', 0, true);
 
-#anonimos
-insert into cliente (id_cliente) values (default);
-insert into cliente (id_cliente) values (default);
-insert into cliente (id_cliente) values (default);
 
 #codigo_barras char,descricao varchar,valor_unitario float,
 insert into produto (codigo_barras, descricao, valor_unitario)
@@ -124,8 +120,8 @@ insert into cliente_loja (id_cliente, id_loja) values (5, 1);
 
 -- Anônimos
 insert into cliente_loja (id_cliente, id_loja) values (6, 1);
-insert into cliente_loja (id_cliente, id_loja) values (7, 2);
-insert into cliente_loja (id_cliente, id_loja) values (8, 3);
+insert into cliente_loja (id_cliente, id_loja) values (5, 2);
+insert into cliente_loja (id_cliente, id_loja) values (2, 3);
 
 
 #id_loja int,codigo_produto char,quantidade int default '0'
