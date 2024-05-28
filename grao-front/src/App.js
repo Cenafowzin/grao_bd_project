@@ -22,6 +22,8 @@ import { LojaProvider } from './Loja/LojaContext';
 import Lojas from './pages/Lojas';
 import Login from './pages/Login';
 import AddVenda from './Venda/AddVenda';
+import BackupSelector from './Backup/BackupSelector';
+
 
 function App() {
   return (
@@ -49,6 +51,7 @@ function App() {
           <Route exact path = "/editarFuncionario/:id_funcionario" element = {<EditFuncionario/> } />
           <Route exact path = "/verFuncionario/:id_funcionario" element={<ViewFuncionario />} />
           <Route exact path = "/realizarVenda" element = {<AddVenda/> } />
+          <Route exact path = "/backups" element={<BackupSelector />} />
         </Routes>
         </Router>
       </div>
