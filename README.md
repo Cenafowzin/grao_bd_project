@@ -13,10 +13,10 @@ Escolha um diretório no seu computador, crie uma pasta e abra o git bash nela.
 <br>"git clone https://github.com/Cenafowzin/grao_bd_project/"
 
 # 2.
-Após a criação da pasta, procure a pasta "Scripts", e rode o arquivo Script.sql com o DBeaver para criar as tabelas.
+Após a criação da pasta, procure a pasta "Scripts", e rode o arquivo "criacao_grao.sql" com o DBeaver para criar as tabelas.
 
 # 3.
-Em seguida, faça o mesmo com o arquivo "criacao_grao.sql" que se encontra na mesma pasta para alimentar as tabelas
+Em seguida, faça o mesmo com o arquivo "Script.sql" que se encontra na mesma pasta para alimentar as tabelas
 
 # 4.
 Após a criação da pasta, abra o IntelliJ, siga o seguinte caminho:
